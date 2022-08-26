@@ -15,7 +15,15 @@ class Start {
     constructor() {
         this.setRandomWord();
         const btnSubmit = document.querySelector('.btn-submit');
+        const input = document.querySelector('.typed-word');
         btnSubmit.addEventListener('click', this.checkAnswer);
+
+        input.addEventListener('keyup', (e) => {
+            if(e.key === 'Enter') {
+                e.preventDefault();
+                btnSubmit.click();
+            }
+        });
     }
 
     randomNumber(max = words.length, min = 0) {
@@ -60,9 +68,3 @@ class Start {
 }
 
 const start = new Start();
-
-
-function setAnimation() {
-    const randomWord = document.querySelector('.random-word > p');        
-    randomWord.classList.toggle('.wobble');
-}
