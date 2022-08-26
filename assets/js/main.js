@@ -21,5 +21,16 @@ function setRandomWord() {
 setRandomWord();
 
 function checkAnswer() {
+    const typedWord = document.querySelector('.typed-word');
+    const randomWord = document.querySelector('.random-word > p');
+    const divCheckAnswer = document.querySelector('.check-answer');
 
+    const p = document.querySelector('.check-answer > p');
+
+    (randomWord.textContent !== typedWord.value) 
+    ? p.innerText = "Incorreto"
+    : p.innerText = "Correto"
 }
+
+const btnSubmit = document.querySelector('.btn-submit');
+btnSubmit.addEventListener('click', checkAnswer);
