@@ -3,42 +3,66 @@ const words = [
     "Distância",
     "Computador",
     "Flamengo",
-    "Símbolo"
+    "Símbolo",
+    "Hoje eu vou para a praia!",
+    "Chegou minha encomenda!",
+    "Amanhã é feriado?",
+    "Que horas são?"
 ];
 
-function randomNumber(max = words.length - 1, min = 0) {
-    return Math.floor(Math.random() * (max - min) + min);
-}
 
-function setRandomWord() {
-    const p = document.querySelector('.random-word > p');
-    p.innerText = words[randomNumber()];
-}
+class Start {
+    constructor() {
+        this.setRandomWord();
+        const btnSubmit = document.querySelector('.btn-submit');
+        btnSubmit.addEventListener('click', this.checkAnswer);
+    }
 
-setRandomWord();
+    randomNumber(max = words.length, min = 0) {
+        return Math.floor(Math.random() * (max - min) + min);
+    }
 
-function checkAnswer() {
-    const typedWord = document.querySelector('.typed-word');
-    const randomWord = document.querySelector('.random-word > p');
+    setRandomWord() {
+        const p = document.querySelector('.random-word > p');
+        p.innerText = words[this.randomNumber()];
+    }
 
-    const p = document.querySelector('.check-answer > p');
-
-    if(randomWord.textContent !== typedWord.value) {
-        randomWord.classList.remove('correct');
-        randomWord.classList.add('incorrect');
-    } else {
-        randomWord.classList.remove('incorrect');
-        randomWord.classList.add('correct');
-
-        setTimeout(() => {
-            setRandomWord();
+    checkAnswer() {
+        const typedWord = document.querySelector('.typed-word');
+        const randomWord = document.querySelector('.random-word > p');
+    
+        if(randomWord.textContent !== typedWord.value) {
             randomWord.classList.remove('correct');
-            typedWord.value = '';
-        }, 1000);
+            randomWord.classList.add('incorrect');
+            randomWord.classList.toggle('wobble');
 
+            setTimeout(() => {
+                randomWord.classList.toggle('wobble');
+            }, 1000);
 
+        } else {
+            randomWord.classList.remove('incorrect');
+            randomWord.classList.add('correct');
+
+            randomWord.classList.toggle('tada');
+
+            setTimeout(() => {
+                randomWord.classList.toggle('tada');
+            }, 1000);
+    
+            setTimeout(() => {
+                start.setRandomWord();
+                randomWord.classList.remove('correct');
+                typedWord.value = '';
+            }, 1500);
+        }
     }
 }
 
-const btnSubmit = document.querySelector('.btn-submit');
-btnSubmit.addEventListener('click', checkAnswer);
+const start = new Start();
+
+
+function setAnimation() {
+    const randomWord = document.querySelector('.random-word > p');        
+    randomWord.classList.toggle('.wobble');
+}
