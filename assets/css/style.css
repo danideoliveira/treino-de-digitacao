@@ -1,6 +1,111 @@
+@import url("https://fonts.googleapis.com/css2?family=League+Spartan:wght@100;200;300;400;500;600;700&display=swap");
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-size: 62.5%;
+  border: none;
+  font-family: "League Spartan", Arial, Helvetica, sans-serif;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  width: 100%;
+  height: 100vh;
+  background-color: whitesmoke;
+}
+.container .box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 70%;
+  height: 90%;
+  gap: 1.5rem;
+  box-shadow: 0px 0px 20px 0px #d1d1d1;
+  padding: 4rem;
+}
+.container .box h1 {
+  font-size: 4.5rem;
+  font-weight: 700;
+}
+.container .box p {
+  font-size: 3rem;
+}
+.container .box .typed-word, .container .box .btn-submit {
+  font-size: 2.5rem;
+}
+.container .box .div-random-word {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 50%;
+  height: 25%;
+}
+.container .box .div-random-word .random-word {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  width: 100%;
+}
+.container .box .div-random-word .random-word p {
+  font-size: 4rem;
+}
+.container .box .div-random-word .random-word p.correct {
+  color: rgb(52, 184, 52);
+}
+.container .box .div-random-word .random-word p.incorrect {
+  color: rgb(255, 87, 87);
+}
+.container .box .div-check-answer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 50%;
+  height: 25%;
+}
+.container .box .div-check-answer .check-answer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  width: 100%;
+  color: #838383;
+}
+.container .box .div-input-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 50%;
+  gap: 3rem;
+}
+.container .box .div-input-btn .typed-word {
+  text-align: center;
+  box-shadow: 0 0 15px 1px #c3c3c3;
+  width: 100%;
+  height: 5rem;
+}
+.container .box .div-input-btn .typed-word:focus {
+  outline: none;
+}
+.container .box .div-input-btn .btn-submit {
+  background-color: #7bff7b;
+  box-shadow: 0px 4px 13px 0px #ababab;
+  transition: 0.3s all ease;
+  font-weight: 500;
+  font-size: 1.8rem;
+  width: 100%;
+  height: 5rem;
+}
+.container .box .div-input-btn .btn-submit:hover {
+  cursor: pointer;
+  background-color: #6ad36a;
+  transition: 0.3s all ease;
 }/*# sourceMappingURL=style.css.map */

@@ -11,10 +11,7 @@ function randomNumber(max = words.length - 1, min = 0) {
 }
 
 function setRandomWord() {
-    const div = document.querySelector('.random-word');
-    const p = document.createElement('p');
-
-    div.appendChild(p);
+    const p = document.querySelector('.random-word > p');
     p.innerText = words[randomNumber()];
 }
 
@@ -26,9 +23,21 @@ function checkAnswer() {
 
     const p = document.querySelector('.check-answer > p');
 
-    (randomWord.textContent !== typedWord.value) 
-    ? p.innerText = "Incorreto"
-    : p.innerText = "Correto"
+    if(randomWord.textContent !== typedWord.value) {
+        randomWord.classList.remove('correct');
+        randomWord.classList.add('incorrect');
+    } else {
+        randomWord.classList.remove('incorrect');
+        randomWord.classList.add('correct');
+
+        setTimeout(() => {
+            setRandomWord();
+            randomWord.classList.remove('correct');
+            typedWord.value = '';
+        }, 1000);
+
+
+    }
 }
 
 const btnSubmit = document.querySelector('.btn-submit');

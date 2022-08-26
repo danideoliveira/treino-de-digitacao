@@ -1,6 +1,115 @@
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@100;200;300;400;500;600;700&display=swap');
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-size: 62.5%;
+    //outline: 1px solid red;
+    border: none;
+    font-family: "League Spartan", Arial, Helvetica, sans-serif;
+}
+
+@mixin setFlexBox($justifyContent, $alignItems, $flexDirection) {
+    display: flex;
+    justify-content: $justifyContent;
+    align-items: $alignItems;
+    flex-direction: $flexDirection;
+}
+
+.container {
+    @include setFlexBox(center, center, row);
+    width: 100%;
+    height: 100vh;
+    background-color: whitesmoke;
+
+    .box {
+        @include setFlexBox(center, center, column);
+        width: 70%;
+        height: 90%;
+        gap: 1.5rem;
+        box-shadow: 0px 0px 20px 0px #d1d1d1;
+        padding: 4rem;
+
+        h1 {
+            font-size: 4.5rem;
+            font-weight: 700;
+        }
+    
+        p {
+            font-size: 3rem;
+        }
+        
+        .typed-word, .btn-submit {
+            font-size: 2.5rem;
+        }
+        
+        .div-random-word {
+            @include setFlexBox(center, center, column);
+            width: 50%;
+            height: 25%;
+
+            .random-word {
+                @include setFlexBox(center, center, row);
+                width: 100%;
+    
+                p {
+                    font-size: 4rem;
+                }
+
+                p.correct {
+                    color: rgb(52, 184, 52);
+                }
+    
+                p.incorrect {
+                    color: rgb(255, 87, 87);
+                }
+            }
+        }
+
+        .div-check-answer {
+            @include setFlexBox(center, center, column);
+            width: 50%;
+            height: 25%;
+            
+            .check-answer {
+                @include setFlexBox(center, center, row);
+                width: 100%;
+                color: #838383;
+            }
+        }
+
+        .div-input-btn {
+            @include setFlexBox(center, center, column);
+            width: 50%;
+            gap: 3rem;
+            
+            .typed-word {
+                text-align: center;
+                box-shadow: 0 0 15px 1px #c3c3c3;
+                width: 100%;
+                height: 5rem;
+
+                &:focus {
+                    outline: none;
+                }
+            }
+
+            .btn-submit {  
+                background-color: #7bff7b;
+                box-shadow: 0px 4px 13px 0px #ababab;
+                transition: 0.3s all ease;
+                font-weight: 500;
+                font-size: 1.8rem;
+                width: 100%;
+                height: 5rem;
+    
+                &:hover {
+                    cursor: pointer;
+                    background-color: #6ad36a;
+                    transition: 0.3s all ease;
+                }
+            }
+        }
+    }
 }
