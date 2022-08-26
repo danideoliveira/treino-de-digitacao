@@ -27,6 +27,8 @@ class Start {
     checkAnswer() {
         const typedWord = document.querySelector('.typed-word');
         const randomWord = document.querySelector('.random-word > p');
+        const counterElement = document.querySelector('.counter');
+        let counter = 0;
     
         if(randomWord.textContent !== typedWord.value) {
             randomWord.classList.remove('correct');
@@ -51,6 +53,8 @@ class Start {
                 start.setRandomWord();
                 randomWord.classList.remove('correct');
                 typedWord.value = '';
+                counter++;
+                counterElement.innerText = counter;
             }, 1500);
         }
     }
