@@ -1,15 +1,4 @@
-const words = [
-    "Experiência",
-    "Distância",
-    "Computador",
-    "Flamengo",
-    "Símbolo",
-    "Hoje eu vou para a praia!",
-    "Chegou minha encomenda!",
-    "Amanhã é feriado?",
-    "Que horas são?"
-];
-
+import { words } from '../modules/wordsList.js'
 
 class Start {
     constructor() {

@@ -17,8 +17,6 @@
     flex-direction: $flexDirection;
 }
 
-
-
 .wobble {
     -webkit-animation-name: wobble;
     animation-name: wobble;
@@ -90,7 +88,6 @@
    }
 }
 
-
 .tada {
     -webkit-animation-name: tada;
     animation-name: tada;
@@ -146,8 +143,6 @@
    }
 }
 
-
-
 .container {
     @include setFlexBox(center, center, row);
     width: 100%;
@@ -164,7 +159,7 @@
 
         h1 {
             font-size: 4.5rem;
-            font-weight: 700;
+            font-weight: 500;
         }
     
         p {
