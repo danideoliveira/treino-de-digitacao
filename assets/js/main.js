@@ -23,7 +23,6 @@ setRandomWord();
 function checkAnswer() {
     const typedWord = document.querySelector('.typed-word');
     const randomWord = document.querySelector('.random-word > p');
-    const divCheckAnswer = document.querySelector('.check-answer');
 
     const p = document.querySelector('.check-answer > p');
 
