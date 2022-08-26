@@ -160,6 +160,7 @@
         h1 {
             font-size: 4.5rem;
             font-weight: 500;
+            color: #c3c3c3;
         }
     
         p {
@@ -215,6 +216,7 @@
                 box-shadow: 0 0 15px 1px #c3c3c3;
                 width: 100%;
                 height: 5rem;
+                background-color: whitesmoke;
 
                 &:focus {
                     outline: none;
@@ -222,7 +224,7 @@
             }
 
             .btn-submit {  
-                background-color: #7bff7b;
+                background-color: #48e96f;
                 box-shadow: 0px 4px 13px 0px #ababab;
                 transition: 0.3s all ease;
                 font-weight: 500;
@@ -232,7 +234,7 @@
     
                 &:hover {
                     cursor: pointer;
-                    background-color: #6ad36a;
+                    background-color: #3cc25d;
                     transition: 0.3s all ease;
                 }
             }
