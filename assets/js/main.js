@@ -28,7 +28,6 @@ class Start {
         const typedWord = document.querySelector('.typed-word');
         const randomWord = document.querySelector('.random-word > p');
         const counterElement = document.querySelector('.counter');
-        let counter = 0;
     
         if(randomWord.textContent !== typedWord.value) {
             randomWord.classList.remove('correct');
@@ -37,7 +36,9 @@ class Start {
 
             setTimeout(() => {
                 randomWord.classList.toggle('wobble');
+                typedWord.focus();
             }, 1000);
+            
 
         } else {
             randomWord.classList.remove('incorrect');
@@ -53,8 +54,8 @@ class Start {
                 start.setRandomWord();
                 randomWord.classList.remove('correct');
                 typedWord.value = '';
-                counter++;
-                counterElement.innerText = counter;
+                typedWord.focus();
+                counterElement.innerText = Number(counterElement.textContent) + 1;
             }, 1500);
         }
     }
