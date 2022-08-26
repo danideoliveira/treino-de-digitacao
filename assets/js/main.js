@@ -5,8 +5,9 @@ class Start {
         this.setRandomWord();
         const btnSubmit = document.querySelector('.btn-submit');
         const input = document.querySelector('.typed-word');
+        input.focus();
+        
         btnSubmit.addEventListener('click', this.checkAnswer);
-
         input.addEventListener('keyup', (e) => {
             if(e.key === 'Enter') {
                 e.preventDefault();
