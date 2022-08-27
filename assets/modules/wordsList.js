@@ -19,5 +19,9 @@ export const words = [
     "Comprei chocolate!",
     "Mosca alcoólatra",
     "500 gramas de queijo",
-    "Vê o que deu nas 14."
+    "Vê o que deu nas 14.",
+    "Na terça trabalho cedo.",
+    "O ônibus atrasou!",
+    "Receba",
+    "Caneta azul",
 ];
