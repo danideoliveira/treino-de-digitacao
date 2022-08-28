@@ -23,7 +23,10 @@ class Start {
 
     setRandomWord() {
         const p = document.querySelector('.random-word > p');
+        const input = document.querySelector('.typed-word');
         p.innerText = words[this.randomNumber()];
+        input.setAttribute('maxlength', p.textContent.length);
+
     }
 
     checkAnswer() {
@@ -66,8 +69,6 @@ class Start {
 const start = new Start();
 
 
-
-
 class DarkMode {
     constructor(arr) {
         const btnDarkMode = document.querySelector('.btn-dark-mode');
@@ -88,5 +89,3 @@ class DarkMode {
 }
 
 const setDarkMode = new DarkMode(darkModeElements);
-
-
