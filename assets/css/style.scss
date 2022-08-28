@@ -220,6 +220,7 @@
                 p {
                     font-size: 4rem;
                     color: #1a1a1a;
+                    transition: 0.5s all ease;
 
                     &.dark {
                     color: whitesmoke;
@@ -227,7 +228,7 @@
                 }
 
                 p.correct {
-                    color: rgb(52, 184, 52);
+                    color: rgb(79, 182, 79);
                 }
     
                 p.incorrect {

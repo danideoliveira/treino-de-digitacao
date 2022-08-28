@@ -188,12 +188,13 @@
 .container .box .div-random-word .random-word p {
   font-size: 4rem;
   color: #1a1a1a;
+  transition: 0.5s all ease;
 }
 .container .box .div-random-word .random-word p.dark {
   color: whitesmoke;
 }
 .container .box .div-random-word .random-word p.correct {
-  color: rgb(52, 184, 52);
+  color: rgb(79, 182, 79);
 }
 .container .box .div-random-word .random-word p.incorrect {
   color: rgb(255, 87, 87);

@@ -81,17 +81,25 @@ const darkModeElements = [
     {element: '.btn-dark-mode > img'},
 ];
 
-function setDarkMode(arr) {
-    arr.forEach(currentElement => {
-        const { element } = currentElement;
-        const el = document.querySelector(element);
-        el.style.transition = `${0.5}s all ease`;
+class DarkMode {
+    constructor(arr) {
+        const btnDarkMode = document.querySelector('.btn-dark-mode');
+        btnDarkMode.addEventListener('click', () => {
+            this.setDarkMode(arr);
+        });
+    }
 
-        el.classList.toggle('dark');
-    });
+    setDarkMode(arr) {
+        arr.forEach(currentElement => {
+            const { element } = currentElement;
+            const el = document.querySelector(element);
+            el.style.transition = `${0.5}s all ease`;
+    
+            el.classList.toggle('dark');
+        });
+    }
 }
 
-const btnDarkMode = document.querySelector('.btn-dark-mode');
-btnDarkMode.addEventListener('click', () => {
-    setDarkMode(darkModeElements);
-});
+const setDarkMode = new DarkMode(darkModeElements);
+
+
