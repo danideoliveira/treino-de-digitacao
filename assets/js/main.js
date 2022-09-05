@@ -85,7 +85,6 @@ class DarkMode {
             const { element } = currentElement;
             const el = document.querySelector(element);
             el.style.transition = `${0.5}s all ease`;
-    
             el.classList.toggle('dark');
         });
     }
