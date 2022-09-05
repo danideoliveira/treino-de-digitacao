@@ -26,7 +26,6 @@ class Start {
         const input = document.querySelector('.typed-word');
         p.innerText = words[this.randomNumber()];
         input.setAttribute('maxlength', p.textContent.length);
-
     }
 
     checkAnswer() {
@@ -71,9 +70,13 @@ const start = new Start();
 
 class DarkMode {
     constructor(arr) {
+        const currentTheme = localStorage.getItem('theme');
+        if(currentTheme === 'dark') this.setDarkMode(arr);
+
         const btnDarkMode = document.querySelector('.btn-dark-mode');
         btnDarkMode.addEventListener('click', () => {
             this.setDarkMode(arr);
+            this.toggleLocalStorage();
         });
     }
 
@@ -85,6 +88,13 @@ class DarkMode {
     
             el.classList.toggle('dark');
         });
+    }
+
+    toggleLocalStorage() {
+        const container = document.querySelector('.container');
+        (!container.classList.contains('dark'))
+            ? localStorage.setItem('theme', 'light')
+            : localStorage.setItem('theme', 'dark')
     }
 }
 
