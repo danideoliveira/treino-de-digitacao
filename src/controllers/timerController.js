@@ -1,5 +1,5 @@
 exports.setTimer = (req, res) => {
-    res.render('index');
+    res.render('indexTimer');
 };
 
 exports.removeTimer = (req, res) => {
