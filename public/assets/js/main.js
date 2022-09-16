@@ -1,5 +1,5 @@
-import { words } from '../modules/wordsList.js'
-import { DarkMode } from '../modules/darkMode.js';
+import { words } from '../../constants/wordsList.js'
+import { DarkMode } from '../../modules/darkMode.js';
 
 class Start {
     constructor() {
