@@ -1,5 +1,5 @@
 import { words } from '../modules/wordsList.js'
-import { darkModeElements } from '../modules/darkModeElements.js'
+import { DarkMode } from '../modules/darkMode.js';
 
 class Start {
     constructor() {
@@ -121,35 +121,3 @@ class Start {
 }
 
 const start = new Start();
-
-
-class DarkMode {
-    constructor(arr) {
-        const currentTheme = localStorage.getItem('theme');
-        if (currentTheme === 'dark') this.setDarkMode(arr);
-
-        const btnDarkMode = document.querySelector('.btn-dark-mode');
-        btnDarkMode.addEventListener('click', () => {
-            this.setDarkMode(arr);
-            this.toggleLocalStorage();
-        });
-    }
-
-    setDarkMode(arr) {
-        arr.forEach(currentElement => {
-            const { element } = currentElement;
-            const el = document.querySelector(element);
-            el.style.transition = `${0.5}s all ease`;
-            el.classList.toggle('dark');
-        });
-    }
-
-    toggleLocalStorage() {
-        const container = document.querySelector('.container');
-        (!container.classList.contains('dark'))
-            ? localStorage.setItem('theme', 'light')
-            : localStorage.setItem('theme', 'dark')
-    }
-}
-
-const setDarkMode = new DarkMode(darkModeElements);

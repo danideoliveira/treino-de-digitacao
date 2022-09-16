@@ -1,11 +1,12 @@
 export const darkModeElements = [
+    {element: 'body'},
     {element: '.tips-title'},
     {element: '.counter-title'},
     {element: '.div-img > p'},
     {element: '.div-img > img'},
     {element: '.typed-word'},
     {element: '.container'},
-    {element: 'h1'},
+    {element: '.title'},
     {element: '.box'},
     {element: '.counter'},
     {element: '.random-word > p'},
@@ -14,4 +15,9 @@ export const darkModeElements = [
     {element: '.btn-dark-mode > img'},
     {element: '.div-timer-secondary > img'},
     {element: '.div-timer-secondary > p'},
+    {element: '.container-menu'},
+    {element: '.container-menu > .box-menu'},
+    {element: '.container-menu > .box-menu > .title-menu'},
+    {element: '.div-form > form:nth-child(1) > button'},
+    {element: '.div-form > form:nth-child(2) > button'},
 ];
