@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "type": "module",
   "scripts": {
+    "start": "nodemon server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -17,5 +17,12 @@
   "bugs": {
     "url": "https://github.com/danideoliveira/treinoDigitacao/issues"
   },
-  "homepage": "https://github.com/danideoliveira/treinoDigitacao#readme"
+  "homepage": "https://github.com/danideoliveira/treinoDigitacao#readme",
+  "dependencies": {
+    "ejs": "^3.1.8",
+    "express": "^4.18.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  }
 }
