@@ -176,7 +176,7 @@
     }
 }
 
-
+@import 'menu';
 
 .container {
     @include setFlexBox(center, center, row);
@@ -338,7 +338,7 @@
             width: 80%;
             gap: 3rem;
 
-            h1 {
+            .title {
                 font-size: 4rem;
                 font-weight: 700;
                 color:#4a4a4a;
