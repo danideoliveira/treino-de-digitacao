@@ -9,7 +9,7 @@
     }
 
     .box-menu {
-        @include setFlexBox(space-evenly, center, column);
+        @include setFlexBox(center, center, column);
         width: 60%;
         height: 80%;
         gap: 1.5rem;
@@ -35,25 +35,62 @@
             height: 50%;
 
             form {
-                @include setFlexBox(space-around, center, column);
-                width: 50%;
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                grid-template-rows: 1fr;
+                grid-row-gap: 0px;
+                width: 70%;
                 height: 100%;
+                align-items: center;
                 
                 button {
                     cursor: pointer;
-                    width: 100%;
-                    height: 40%;
-                    font-size: 1.8rem;
-                    background-color: aquamarine;
-                    transition: 0.3s ease-out;
+                    width: 55%;
+                    height: 55%;
+                    background-color: #f5f5f5;
+                    transition: 0.2s ease-out;
+                    box-shadow: 0px 4px 6px 1px #b9b9b9;
+                    border-radius: 20px;
+                    margin: 0 auto;
 
                     &.dark {
-                        background-color: #d3d3d3;
+                        background-color: #1a1a1a;
+                        box-shadow: 0px 4px 6px 1px #000000;
                     }
 
                     &:hover {
-                        background-color: rgb(95, 196, 162);
-                        transition: 0.3s ease-out;
+                        background-color: #30ec69;
+                        box-shadow: 0px 4px 10px 1px #30ec68ab;
+                        transition: 0.2s ease-out;
+                    }
+
+                    img, p {
+                        cursor: pointer;
+                    }
+
+                    img {
+                        width: 40px;
+                        margin-bottom: 10px;
+
+                        &.dark {
+                            filter: invert(0.8);
+                        }
+
+                        &.mouse-over {
+                            filter: invert(0.1);
+                        }
+                    }
+
+                    p {
+                        font-size: 1.8rem;
+
+                        &.dark {
+                            color: #D3D3D3;
+                        }
+                        
+                        &.mouse-over {
+                            color: #1a1a1a;
+                        }
                     }
                 }
             }
