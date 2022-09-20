@@ -19,5 +19,13 @@ export const darkModeElements = [
     {element: '.container-menu > .box-menu'},
     {element: '.container-menu > .box-menu > .title-menu'},
     {element: '.div-form > form > button:nth-child(1)'},
+    {element: '.div-form > form > button:nth-child(1) > img'},
+    {element: '.div-form > form > button:nth-child(1) > p'},
     {element: '.div-form > form > button:nth-child(2)'},
+    {element: '.div-form > form > button:nth-child(2) > img'},
+    {element: '.div-form > form > button:nth-child(2) > p'},
+    {element: '.container-timer-settings'},
+    {element: '.container-timer-settings > .box-timer-settings'},
+    {element: '.container-timer-settings > .box-timer-settings > .title-timer-settings'},
+    {element: '.div-form-timer-settings > form > input'},
 ];
