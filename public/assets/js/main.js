@@ -31,16 +31,13 @@ class Start {
         input.setAttribute('maxlength', p.textContent.length);
     }
 
-    resetTimer() {
-        const timerElement = document.querySelector('.div-timer-secondary > p');
-        const initialTimerValue = timerElement.textContent;
-    }
-
     setTimer() {
         const timerElement = document.querySelector('.div-timer-secondary > p');
         const randomWord = document.querySelector('.random-word > p');
         const typedWord = document.querySelector('.typed-word');
-        
+
+        if (!timerElement) return;
+
         const newTimer = setTimeout(() => {
             if (Number(timerElement.textContent) !== 0) {
                 timerElement.textContent = Number(timerElement.textContent) - 1;
@@ -49,37 +46,31 @@ class Start {
 
             } else {
                 clearTimeout(newTimer);
-                timerElement.style.color = '#da3232';
+                timerElement.classList.add('time-over');
 
                 if (randomWord.textContent !== typedWord.value) {
                     timerElement.classList.toggle('tada');
                     this.isIncorrect(typedWord, randomWord);
-                    
+
                     setTimeout(() => {
                         start.setRandomWord();
                         timerElement.classList.toggle('tada');
                         randomWord.classList.remove('incorrect');
                         typedWord.value = '';
                         typedWord.focus();
-                        timerElement.textContent = Number(timerElement.textContent) + initialTimer;
+                        if(timerElement) timerElement.textContent = Number(timerElement.textContent) + initialTimer;
                         initialTimer = 0;
-                        timerElement.style.color = 'black';
                         start.setTimer();
+                        timerElement.classList.remove('time-over');
                     }, 1500);
 
                 } else {
-                    this.isCorrect(typedWord, randomWord);  
+                    this.isCorrect(typedWord, randomWord);
                     setTimeout(() => {
                         start.setTimer();
-                    }, 1500)              
+                        timerElement.classList.remove('time-over');
+                    }, 1500)
                 }
-
-                setTimeout(() => {
-                    (timerElement.classList.contains('dark'))
-                    ? timerElement.style.color = '#1a1a1a'
-                    : timerElement.style.color = '#f5f5f5'   
-                }, 1500);
-
             }
         }, 1000);
     }
@@ -105,7 +96,7 @@ class Start {
             typedWord.value = '';
             typedWord.focus();
             counterElement.innerText = Number(counterElement.textContent) + 1;
-            timerElement.textContent = Number(timerElement.textContent) + initialTimer;
+            if(timerElement) timerElement.textContent = Number(timerElement.textContent) + initialTimer;
             initialTimer = 0;
         }, 1500);
     }
@@ -130,8 +121,8 @@ class Start {
         const randomWord = document.querySelector('.random-word > p');
 
         (randomWord.textContent !== typedWord.value)
-        ? start.isIncorrect(typedWord, randomWord)
-        : start.isCorrect(typedWord, randomWord)
+            ? start.isIncorrect(typedWord, randomWord)
+            : start.isCorrect(typedWord, randomWord)
     }
 }
 
