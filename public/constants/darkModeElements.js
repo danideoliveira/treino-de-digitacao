@@ -11,6 +11,8 @@ export const darkModeElements = [
     {element: '.counter'},
     {element: '.random-word > p'},
     {element: '.dark-mode'},
+    {element: '.section-back-button'},
+    {element: '.section-back-button > a'},
     {element: '.btn-dark-mode'},
     {element: '.btn-dark-mode > img'},
     {element: '.div-timer-secondary > img'},
@@ -27,5 +29,6 @@ export const darkModeElements = [
     {element: '.container-timer-settings'},
     {element: '.container-timer-settings > .box-timer-settings'},
     {element: '.container-timer-settings > .box-timer-settings > .title-timer-settings'},
-    {element: '.div-form-timer-settings > form > input'},
+    {element: '.div-form-timer-settings > form > .div-selected-time > input'},
+    {element: '.div-form-timer-settings > form > .div-selected-time > p'},
 ];
