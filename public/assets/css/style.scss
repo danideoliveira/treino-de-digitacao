@@ -143,13 +143,42 @@
    }
 }
 
+
 .dark-mode {
+    display: flex;
+    flex-direction: column;
     background-color: whitesmoke;
     position: fixed;
-    padding: 10px 0 0 10px;
-
+    padding: 25px 0 0 25px;
+    gap: 25px;
+    align-items: center;
+    
     &.dark {
         background-color: #1a1a1a;
+    }
+    
+    .section-back-button {
+        width: 100%;
+        cursor: pointer;
+
+        a {
+            font-size: 3rem;
+            color: #1a1a1a;
+            text-decoration: none;
+            display: inline-block;
+            padding: 8px 16px;
+            border-radius: 50%;
+            border: 2px solid #1a1a1a;
+            width: 50px;
+            height: 50px;
+            text-align: center;
+            cursor: pointer;
+    
+            &.dark {
+                color: #d3d3d3;
+                border: 2px solid #d3d3d3;
+            }
+        }
     }
 
     .btn-dark-mode {

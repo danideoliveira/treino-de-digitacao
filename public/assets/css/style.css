@@ -108,12 +108,37 @@
   }
 }
 .dark-mode {
+  display: flex;
+  flex-direction: column;
   background-color: whitesmoke;
   position: fixed;
-  padding: 10px 0 0 10px;
+  padding: 25px 0 0 25px;
+  gap: 25px;
+  align-items: center;
 }
 .dark-mode.dark {
   background-color: #1a1a1a;
+}
+.dark-mode .section-back-button {
+  width: 100%;
+  cursor: pointer;
+}
+.dark-mode .section-back-button a {
+  font-size: 3rem;
+  color: #1a1a1a;
+  text-decoration: none;
+  display: inline-block;
+  padding: 8px 16px;
+  border-radius: 50%;
+  border: 2px solid #1a1a1a;
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  cursor: pointer;
+}
+.dark-mode .section-back-button a.dark {
+  color: #d3d3d3;
+  border: 2px solid #d3d3d3;
 }
 .dark-mode .btn-dark-mode {
   display: flex;
@@ -244,7 +269,7 @@
 }
 .container-timer-settings .box-timer-settings {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
   align-items: center;
   flex-direction: column;
   width: 60%;
@@ -279,35 +304,52 @@
   width: 50%;
   height: 100%;
 }
-.container-timer-settings .box-timer-settings .div-form-timer-settings form input {
+.container-timer-settings .box-timer-settings .div-form-timer-settings form .div-selected-time {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  height: 100%;
+  width: 60%;
+  gap: 20px;
+}
+.container-timer-settings .box-timer-settings .div-form-timer-settings form .div-selected-time input {
   width: 100%;
-  height: 25%;
+  height: 50px;
   font-size: 2.5rem;
   box-shadow: 0px 0px 20px 0px #d1d1d1;
   text-indent: 20px;
   cursor: auto;
+  text-align: center;
 }
-.container-timer-settings .box-timer-settings .div-form-timer-settings form input:focus {
+.container-timer-settings .box-timer-settings .div-form-timer-settings form .div-selected-time input:focus {
   outline: none;
 }
-.container-timer-settings .box-timer-settings .div-form-timer-settings form input.dark {
+.container-timer-settings .box-timer-settings .div-form-timer-settings form .div-selected-time input.dark {
   color: whitesmoke;
   background-color: #1a1a1a;
   box-shadow: 0px 0px 20px 0px #000000;
+}
+.container-timer-settings .box-timer-settings .div-form-timer-settings form .div-selected-time p {
+  font-size: 2.5rem;
+  color: #1a1a1a;
+}
+.container-timer-settings .box-timer-settings .div-form-timer-settings form .div-selected-time p.dark {
+  color: #D3D3D3;
 }
 .container-timer-settings .box-timer-settings .div-form-timer-settings form button {
   cursor: pointer;
   width: 100%;
   height: 40%;
   font-size: 1.8rem;
-  background-color: aquamarine;
+  background-color: #30ec69;
   transition: 0.3s ease-out;
 }
 .container-timer-settings .box-timer-settings .div-form-timer-settings form button.dark {
   background-color: #d3d3d3;
 }
 .container-timer-settings .box-timer-settings .div-form-timer-settings form button:hover {
-  background-color: rgb(95, 196, 162);
+  background-color: #2ac458;
   transition: 0.3s ease-out;
 }
 
