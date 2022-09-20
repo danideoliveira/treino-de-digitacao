@@ -177,6 +177,7 @@
 }
 
 @import 'menu';
+@import 'timerSettings';
 
 .container {
     @include setFlexBox(center, center, row);
@@ -235,7 +236,7 @@
                     color: #1a1a1a;
                     
                     &.dark {
-                        color: whitesmoke;
+                        color: #f5f5f5;
                     }
                 }
             }

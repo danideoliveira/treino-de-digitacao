@@ -14,14 +14,14 @@
         </button>
     </section>
 
-    <section class="container-menu">
-        <div class="box-menu">
-            <h1 class="title-menu">Selecione modo desejado:</h1>
+    <section class="container-timer-settings">
+        <div class="box-timer-settings">
+            <h1 class="title-timer-settings">Selecione o tempo desejado:</h1>
 
-            <div class="div-form">
-                <form action="/" method="GET">
-                    <button formaction="/timer-off">Treinamento</button>
-                    <button formaction="/timer-settings">Contagem Regressiva</button>
+            <div class="div-form-timer-settings">
+                <form action="/timer-on" method="POST">
+                    <input type="number" name="time" max="90" min="10" value="10" required>
+                    <button>Iniciar</button>
                 </form>
             </div>
         </div>

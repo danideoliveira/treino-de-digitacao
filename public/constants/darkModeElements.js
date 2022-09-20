@@ -18,6 +18,6 @@ export const darkModeElements = [
     {element: '.container-menu'},
     {element: '.container-menu > .box-menu'},
     {element: '.container-menu > .box-menu > .title-menu'},
-    {element: '.div-form > form:nth-child(1) > button'},
-    {element: '.div-form > form:nth-child(2) > button'},
+    {element: '.div-form > form > button:nth-child(1)'},
+    {element: '.div-form > form > button:nth-child(2)'},
 ];

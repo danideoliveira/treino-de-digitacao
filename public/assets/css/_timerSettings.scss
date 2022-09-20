@@ -1,4 +1,4 @@
-.container-menu {
+.container-timer-settings {
     @include setFlexBox(center, center, row);
     width: 100%;
     height: 100vh;
@@ -8,7 +8,7 @@
         background-color: #1a1a1a;
     }
 
-    .box-menu {
+    .box-timer-settings {
         @include setFlexBox(space-evenly, center, column);
         width: 60%;
         height: 80%;
@@ -21,7 +21,7 @@
             box-shadow: 0px 0px 20px 0px #000000;
         }
 
-        .title-menu {
+        .title-timer-settings {
             font-size: 3.2rem;
 
             &.dark {
@@ -29,7 +29,7 @@
             }
         }
 
-        .div-form {
+        .div-form-timer-settings {
             @include setFlexBox(space-around, center, column);
             width: 100%;
             height: 50%;
@@ -38,6 +38,18 @@
                 @include setFlexBox(space-around, center, column);
                 width: 50%;
                 height: 100%;
+
+                input {
+                    width: 100%;
+                    height: 25%;
+                    font-size: 2.5rem;
+                    box-shadow: 0px 0px 20px 0px #d1d1d1;
+                    text-indent: 20px;
+
+                    &:focus {
+                        outline: none;
+                    }
+                }
                 
                 button {
                     cursor: pointer;
