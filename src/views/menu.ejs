@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digitação</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <section class="dark-mode">
+        <button class="btn-dark-mode">
+            <img src="assets/img/moon_icon.png" alt="Lua icon">
+        </button>
+    </section>
+
+    <section class="container-menu">
+        <div class="box-menu">
+            <h1 class="title-menu">Selecione modo desejado:</h1>
+
+            <div class="div-form">
+                <form action="/" method="GET">
+                    <button formaction="/training-mode">
+                        <img src="assets/img/icon_keyboard.png" alt="Teclado Icon">
+                        <p>Treinamento</p>
+                    </button>
+                    <button formaction="/timer-settings">
+                        <img src="assets/img/icon_timer.png" alt="Timer Icon">
+                        <p>Contagem Regressiva</p>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+    
+    <script type="module" src="modules/darkMode.js"></script>
+</body>
+</html>
