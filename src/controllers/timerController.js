@@ -1,9 +1,9 @@
-exports.setTimer = (req, res) => {
-    res.render('indexTimer', { time: req.body.time });
+exports.setTimerMode = (req, res) => {
+    res.render('timerMode', { time: req.body.time });
 };
 
-exports.removeTimer = (req, res) => {
-    res.render('indexNoTimer');
+exports.setTrainingMode = (req, res) => {
+    res.render('trainingMode');
 };
 
 exports.setTimerSettings = (req, res) => {

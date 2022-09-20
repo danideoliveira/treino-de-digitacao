@@ -9,8 +9,8 @@ route.get('/', menuController.setMenu);
 // Rota configurações de Timer
 route.get('/timer-settings', timerController.setTimerSettings)
 
-// Rotas Timer
-route.post('/timer-on', timerController.setTimer);
-route.get('/timer-off', timerController.removeTimer);
+// Rotas Modo de Jogo
+route.post('/timer-mode', timerController.setTimerMode);
+route.get('/training-mode', timerController.setTrainingMode);
 
 module.exports = route;
