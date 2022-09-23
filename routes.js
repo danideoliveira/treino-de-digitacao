@@ -3,13 +3,13 @@ const route = express.Router();
 const timerController = require('./src/controllers/timerController');
 const menuController = require('./src/controllers/menuController');
 
-// Rota Menu
+// Rota - Menu
 route.get('/', menuController.setMenu);
 
-// Rota configurações de Timer
+// Rota - Configurações de Timer
 route.get('/timer-settings', timerController.setTimerSettings)
 
-// Rotas Modo de Jogo
+// Rotas - Modos de Jogo
 route.post('/timer-mode', timerController.setTimerMode);
 route.get('/training-mode', timerController.setTrainingMode);
 
