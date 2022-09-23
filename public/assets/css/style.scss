@@ -143,67 +143,70 @@
    }
 }
 
+@import 'variables';
 
-.dark-mode {
-    display: flex;
-    flex-direction: column;
-    background-color: whitesmoke;
+.section-config-options {
+    @include setFlexBox(flex-start, center, column);
     position: fixed;
-    padding: 25px 0 0 25px;
-    gap: 25px;
-    align-items: center;
-    
-    &.dark {
-        background-color: #1a1a1a;
-    }
-    
-    .section-back-button {
-        width: 100%;
+    height: 100%;
+    padding: 25px 15px;
+    gap: 15px;
+
+    .div-back-button {
         cursor: pointer;
+        height: 50px;
 
         a {
             font-size: 3rem;
-            color: #1a1a1a;
+            color: $darkModeBlack;
             text-decoration: none;
             display: inline-block;
-            padding: 8px 16px;
+            padding: 5px 16px;
             border-radius: 50%;
-            border: 2px solid #1a1a1a;
-            width: 50px;
-            height: 50px;
+            border: 1.5px solid $darkModeBlack;
             text-align: center;
             cursor: pointer;
     
             &.dark {
-                color: #d3d3d3;
-                border: 2px solid #d3d3d3;
+                color: $darkModeWhite;
+                border: 1.5px solid $darkModeWhite;
             }
         }
     }
 
-    .btn-dark-mode {
-        @include setFlexBox(center, center, row);
-        width: 50px;
-        height: 50px;
-        font-size: 1.8rem; 
-        background-color: whitesmoke;
-        border-radius: 50px;
-        cursor: pointer;
-    
+    .div-dark-mode {
+        background-color: $lightModeWhite;
+        align-items: center;
+        
         &.dark {
-            background-color: #1a1a1a;
+            background-color: $darkModeBlack;
         }
     
-        img {
-            width: 30px;
+        .btn-dark-mode {
+            @include setFlexBox(center, center, row);
+            width: 50px;
+            height: 50px;
+            font-size: 1.8rem; 
+            background-color: $lightModeWhite;
+            border-radius: 50px;
             cursor: pointer;
-    
+        
             &.dark {
-                filter: invert(0.7);
+                background-color: $darkModeBlack;
+            }
+        
+            img {
+                width: 30px;
+                cursor: pointer;
+        
+                &.dark {
+                    filter: invert(0.7);
+                }
             }
         }
     }
 }
+
 
 @import 'menu';
 @import 'timerSettings';
@@ -212,10 +215,10 @@
     @include setFlexBox(center, center, row);
     width: 100%;
     height: 100vh;
-    background-color: whitesmoke;
+    background-color: $lightModeWhite;
 
     &.dark {
-        background-color: #1a1a1a;
+        background-color: $darkModeBlack;
     }
 
     .box {
@@ -223,7 +226,7 @@
         width: 60%;
         height: 80%;
         gap: 1.5rem;
-        box-shadow: 0px 0px 20px 0px #d1d1d1;
+        box-shadow: 0px 0px 20px 0px $darkModeWhiteShadow;
         padding: 4rem;
         content-visibility: auto;
 
@@ -262,14 +265,14 @@
                 }
     
                 p {
-                    color: #1a1a1a;
+                    color: $darkModeBlack;
                     
                     &.dark {
-                        color: #f5f5f5;
+                        color: $lightModeWhite;
                     }
                     
                     &.time-over {
-                        color: #ff5757;
+                        color: $incorrectRed;
                     }
 
                 }
@@ -288,34 +291,21 @@
     
                 p {
                     font-size: 4rem;
-                    color: #1a1a1a;
+                    color: $darkModeBlack;
                     transition: 0.5s all ease;
 
                     &.dark {
-                    color: whitesmoke;
+                    color: $lightModeWhite;
                 }
                 }
 
                 p.correct {
-                    color: rgb(79, 182, 79);
+                    color: $correctGreen
                 }
     
                 p.incorrect {
-                    color: rgb(255, 87, 87);
+                    color: $incorrectRed;
                 }
-            }
-        }
-
-        .div-check-answer {
-            @include setFlexBox(center, center, column);
-            width: 50%;
-            height: 25%;
-            z-index: 1;
-            
-            .check-answer {
-                @include setFlexBox(center, center, row);
-                width: 100%;
-                color: #838383;
             }
         }
 
@@ -327,26 +317,26 @@
             
             .typed-word {
                 text-align: center;
-                box-shadow: 1px 6px 9px 1px #c3c3c3;
+                box-shadow: 1px 6px 9px 1px $darkModeWhiteShadow;
                 width: 100%;
                 height: 5rem;
                 cursor: auto;
-                background-color: whitesmoke;
-                color: #1a1a1a;
+                background-color: $lightModeWhite;
+                color: $darkModeBlack;
 
                 &:focus {
                     outline: none;
                 }
 
                 &.dark {
-                    color: whitesmoke;
-                    background-color: #1a1a1a;
-                    box-shadow: 0px 0px 20px 0px #000000;
+                    color: $lightModeWhite;
+                    background-color: $darkModeBlack;
+                    box-shadow: 0px 0px 20px 0px $absoluteBlack;
                 }
             }
 
             .btn-submit {  
-                background-color: #48e96f;
+                background-color: $glowGreen;
                 transition: 0.3s all ease;
                 font-weight: 500;
                 font-size: 1.8rem;
@@ -355,7 +345,7 @@
     
                 &:hover {
                     cursor: pointer;
-                    background-color: #3cc25d;
+                    background-color: $correctGreen;
                     transition: 0.3s all ease;
                 }
             }
@@ -376,24 +366,24 @@
             .title {
                 font-size: 4rem;
                 font-weight: 700;
-                color:#4a4a4a;
+                color: $titleGrey;
                 text-align: center;
 
                 &.dark {
-                    color: #959595;
+                    color: $darkModetitleGrey
                 }
             }
         }
 
         h2, p {
-            color: #1a1a1a;
+            color: $darkModeBlack;
         }
 
         h2 {
             font-size: 2.5rem;
 
             &.dark {
-                color: lightgrey;
+                color: $darkModeWhite;
             }
         }
 
@@ -401,7 +391,7 @@
             font-size: 3rem;
 
             &.dark {
-                color: #959595
+                color: $darkModetitleGrey
             }
         }
 

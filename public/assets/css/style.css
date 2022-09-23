@@ -107,40 +107,43 @@
     transform: scale3d(1, 1, 1);
   }
 }
-.dark-mode {
+.section-config-options {
   display: flex;
-  flex-direction: column;
-  background-color: whitesmoke;
-  position: fixed;
-  padding: 25px 0 0 25px;
-  gap: 25px;
+  justify-content: flex-start;
   align-items: center;
+  flex-direction: column;
+  position: fixed;
+  height: 100%;
+  padding: 25px 15px;
+  gap: 15px;
 }
-.dark-mode.dark {
-  background-color: #1a1a1a;
-}
-.dark-mode .section-back-button {
-  width: 100%;
+.section-config-options .div-back-button {
   cursor: pointer;
+  height: 50px;
 }
-.dark-mode .section-back-button a {
+.section-config-options .div-back-button a {
   font-size: 3rem;
   color: #1a1a1a;
   text-decoration: none;
   display: inline-block;
-  padding: 8px 16px;
+  padding: 5px 16px;
   border-radius: 50%;
-  border: 2px solid #1a1a1a;
-  width: 50px;
-  height: 50px;
+  border: 1.5px solid #1a1a1a;
   text-align: center;
   cursor: pointer;
 }
-.dark-mode .section-back-button a.dark {
+.section-config-options .div-back-button a.dark {
   color: #d3d3d3;
-  border: 2px solid #d3d3d3;
+  border: 1.5px solid #d3d3d3;
 }
-.dark-mode .btn-dark-mode {
+.section-config-options .div-dark-mode {
+  background-color: #f5f5f5;
+  align-items: center;
+}
+.section-config-options .div-dark-mode.dark {
+  background-color: #1a1a1a;
+}
+.section-config-options .div-dark-mode .btn-dark-mode {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -148,18 +151,18 @@
   width: 50px;
   height: 50px;
   font-size: 1.8rem;
-  background-color: whitesmoke;
+  background-color: #f5f5f5;
   border-radius: 50px;
   cursor: pointer;
 }
-.dark-mode .btn-dark-mode.dark {
+.section-config-options .div-dark-mode .btn-dark-mode.dark {
   background-color: #1a1a1a;
 }
-.dark-mode .btn-dark-mode img {
+.section-config-options .div-dark-mode .btn-dark-mode img {
   width: 30px;
   cursor: pointer;
 }
-.dark-mode .btn-dark-mode img.dark {
+.section-config-options .div-dark-mode .btn-dark-mode img.dark {
   filter: invert(0.7);
 }
 
@@ -170,7 +173,7 @@
   flex-direction: row;
   width: 100%;
   height: 100vh;
-  background-color: whitesmoke;
+  background-color: #f5f5f5;
 }
 .container-menu.dark {
   background-color: #1a1a1a;
@@ -183,7 +186,7 @@
   width: 60%;
   height: 80%;
   gap: 1.5rem;
-  box-shadow: 0px 0px 20px 0px #d1d1d1;
+  box-shadow: 0px 0px 20px 0px #d3d3d3;
   padding: 4rem;
   content-visibility: auto;
 }
@@ -194,7 +197,7 @@
   font-size: 3.2rem;
 }
 .container-menu .box-menu .title-menu.dark {
-  color: #D3D3D3;
+  color: #d3d3d3;
 }
 .container-menu .box-menu .div-form {
   display: flex;
@@ -229,7 +232,7 @@
 }
 .container-menu .box-menu .div-form form button:hover {
   background-color: #30ec69;
-  box-shadow: 0px 4px 10px 1px rgba(48, 236, 104, 0.6705882353);
+  box-shadow: 0px 0px 10px 1px rgba(48, 236, 104, 0.6705882353);
   transition: 0.2s ease-out;
 }
 .container-menu .box-menu .div-form form button img, .container-menu .box-menu .div-form form button p {
@@ -249,7 +252,7 @@
   font-size: 1.8rem;
 }
 .container-menu .box-menu .div-form form button p.dark {
-  color: #D3D3D3;
+  color: #d3d3d3;
 }
 .container-menu .box-menu .div-form form button p.mouse-over {
   color: #1a1a1a;
@@ -262,7 +265,7 @@
   flex-direction: row;
   width: 100%;
   height: 100vh;
-  background-color: whitesmoke;
+  background-color: #f5f5f5;
 }
 .container-timer-settings.dark {
   background-color: #1a1a1a;
@@ -275,7 +278,7 @@
   width: 60%;
   height: 80%;
   gap: 1.5rem;
-  box-shadow: 0px 0px 20px 0px #d1d1d1;
+  box-shadow: 0px 0px 20px 0px #d3d3d3;
   padding: 4rem;
   content-visibility: auto;
 }
@@ -286,7 +289,7 @@
   font-size: 3.2rem;
 }
 .container-timer-settings .box-timer-settings .title-timer-settings.dark {
-  color: #D3D3D3;
+  color: #d3d3d3;
 }
 .container-timer-settings .box-timer-settings .div-form-timer-settings {
   display: flex;
@@ -310,23 +313,46 @@
   align-items: center;
   flex-direction: row;
   height: 100%;
-  width: 60%;
+  width: 100%;
   gap: 20px;
 }
-.container-timer-settings .box-timer-settings .div-form-timer-settings form .div-selected-time input {
+.container-timer-settings .box-timer-settings .div-form-timer-settings form .div-selected-time .set-timer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  width: 100%;
+  gap: 20px;
+}
+.container-timer-settings .box-timer-settings .div-form-timer-settings form .div-selected-time .set-timer .decrease-timer, .container-timer-settings .box-timer-settings .div-form-timer-settings form .div-selected-time .set-timer .increase-timer {
   width: 100%;
   height: 50px;
   font-size: 2.5rem;
-  box-shadow: 0px 0px 20px 0px #d1d1d1;
-  text-indent: 20px;
+  cursor: pointer;
+  text-align: center;
+  background-color: #30ec69;
+  color: #1a1a1a;
+}
+.container-timer-settings .box-timer-settings .div-form-timer-settings form .div-selected-time .set-timer .decrease-timer:hover, .container-timer-settings .box-timer-settings .div-form-timer-settings form .div-selected-time .set-timer .increase-timer:hover {
+  background-color: #d3d3d3;
+}
+.container-timer-settings .box-timer-settings .div-form-timer-settings form .div-selected-time .set-timer .timer-value {
+  width: 100%;
+  height: 50px;
+  font-size: 2.5rem;
+  box-shadow: 0px 0px 20px 0px #d3d3d3;
   cursor: auto;
   text-align: center;
 }
-.container-timer-settings .box-timer-settings .div-form-timer-settings form .div-selected-time input:focus {
+.container-timer-settings .box-timer-settings .div-form-timer-settings form .div-selected-time .set-timer .timer-value::-webkit-inner-spin-button, .container-timer-settings .box-timer-settings .div-form-timer-settings form .div-selected-time .set-timer .timer-value::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  -moz-appearance: textfield;
+}
+.container-timer-settings .box-timer-settings .div-form-timer-settings form .div-selected-time .set-timer .timer-value:focus {
   outline: none;
 }
-.container-timer-settings .box-timer-settings .div-form-timer-settings form .div-selected-time input.dark {
-  color: whitesmoke;
+.container-timer-settings .box-timer-settings .div-form-timer-settings form .div-selected-time .set-timer .timer-value.dark {
+  color: #d3d3d3;
   background-color: #1a1a1a;
   box-shadow: 0px 0px 20px 0px #000000;
 }
@@ -335,7 +361,7 @@
   color: #1a1a1a;
 }
 .container-timer-settings .box-timer-settings .div-form-timer-settings form .div-selected-time p.dark {
-  color: #D3D3D3;
+  color: #d3d3d3;
 }
 .container-timer-settings .box-timer-settings .div-form-timer-settings form button {
   cursor: pointer;
@@ -349,7 +375,7 @@
   background-color: #d3d3d3;
 }
 .container-timer-settings .box-timer-settings .div-form-timer-settings form button:hover {
-  background-color: #2ac458;
+  background-color: #d3d3d3;
   transition: 0.3s ease-out;
 }
 
@@ -360,7 +386,7 @@
   flex-direction: row;
   width: 100%;
   height: 100vh;
-  background-color: whitesmoke;
+  background-color: #f5f5f5;
 }
 .container.dark {
   background-color: #1a1a1a;
@@ -373,7 +399,7 @@
   width: 60%;
   height: 80%;
   gap: 1.5rem;
-  box-shadow: 0px 0px 20px 0px #d1d1d1;
+  box-shadow: 0px 0px 20px 0px #b9b9b9;
   padding: 4rem;
   content-visibility: auto;
 }
@@ -440,30 +466,13 @@
   transition: 0.5s all ease;
 }
 .container .box .div-random-word .random-word p.dark {
-  color: whitesmoke;
+  color: #f5f5f5;
 }
 .container .box .div-random-word .random-word p.correct {
-  color: rgb(79, 182, 79);
+  color: #4fb64f;
 }
 .container .box .div-random-word .random-word p.incorrect {
-  color: rgb(255, 87, 87);
-}
-.container .box .div-check-answer {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  width: 50%;
-  height: 25%;
-  z-index: 1;
-}
-.container .box .div-check-answer .check-answer {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: row;
-  width: 100%;
-  color: #838383;
+  color: #ff5757;
 }
 .container .box .div-input-btn {
   display: flex;
@@ -476,23 +485,23 @@
 }
 .container .box .div-input-btn .typed-word {
   text-align: center;
-  box-shadow: 1px 6px 9px 1px #c3c3c3;
+  box-shadow: 1px 6px 9px 1px #b9b9b9;
   width: 100%;
   height: 5rem;
   cursor: auto;
-  background-color: whitesmoke;
+  background-color: #f5f5f5;
   color: #1a1a1a;
 }
 .container .box .div-input-btn .typed-word:focus {
   outline: none;
 }
 .container .box .div-input-btn .typed-word.dark {
-  color: whitesmoke;
+  color: #f5f5f5;
   background-color: #1a1a1a;
   box-shadow: 0px 0px 20px 0px #000000;
 }
 .container .box .div-input-btn .btn-submit {
-  background-color: #48e96f;
+  background-color: #30ec69;
   transition: 0.3s all ease;
   font-weight: 500;
   font-size: 1.8rem;
@@ -501,7 +510,7 @@
 }
 .container .box .div-input-btn .btn-submit:hover {
   cursor: pointer;
-  background-color: #3cc25d;
+  background-color: #4fb64f;
   transition: 0.3s all ease;
 }
 .container .div-counter-tips {
@@ -537,7 +546,7 @@
   font-size: 2.5rem;
 }
 .container .div-counter-tips h2.dark {
-  color: lightgrey;
+  color: #d3d3d3;
 }
 .container .div-counter-tips p {
   font-size: 3rem;
