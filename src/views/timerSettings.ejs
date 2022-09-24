@@ -9,14 +9,15 @@
     <link rel="shortcut icon" href="assets/img/icon_keyboard.png" type="image/x-icon">
 </head>
 <body>
-    
-    <section class="dark-mode">
-        <section class="section-back-button">
+    <section class="section-config-options">
+        <div class="div-back-button">
             <a href="/">&#8249;</a>
-        </section>
-        <button class="btn-dark-mode">
-            <img src="assets/img/moon_icon.png" alt="Lua icon">
-        </button>
+        </div>
+        <div class="div-dark-mode">
+            <button class="btn-dark-mode">
+                <img src="assets/img/moon_icon.png" alt="Lua icon">
+            </button>
+        </div> 
     </section>
 
     <section class="container-timer-settings">
@@ -26,7 +27,11 @@
             <div class="div-form-timer-settings">
                 <form action="/timer-mode" method="POST">
                     <div class="div-selected-time">
-                        <input type="number" name="time" max="90" min="5" value="10" required>
+                        <div class="set-timer">
+                            <input class="decrease-timer" type="button" value="-">
+                            <input class="timer-value" type="number" name="time" max="90" min="5" value="10" required>
+                            <input class="increase-timer" type="button" value="+">
+                        </div>
                         <p>segundos</p>
                     </div>
                     <button>Iniciar</button>
@@ -36,5 +41,6 @@
     </section>
     
     <script type="module" src="modules/darkMode.js"></script>
+    <script type="module" src="modules/timerControls.js"></script>
 </body>
 </html>
