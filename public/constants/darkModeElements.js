@@ -31,4 +31,7 @@ export const darkModeElements = [
     {element: '.container-timer-settings > .box-timer-settings > .title-timer-settings'},
     {element: '.div-form-timer-settings > form > .div-selected-time > .set-timer > .timer-value'},
     {element: '.div-form-timer-settings > form > .div-selected-time > p'},
+    {element: 'footer'},
+    {element: 'footer > p > a'},
+    {element: 'footer > p'},
 ];
