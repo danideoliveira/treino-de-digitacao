@@ -7,7 +7,7 @@ const menuController = require('./src/controllers/menuController');
 route.get('/', menuController.setMenu);
 
 // Rota - Configurações de Timer
-route.get('/timer-settings', timerController.setTimerSettings)
+route.get('/timer-settings', timerController.setTimerSettings);
 
 // Rotas - Modos de Jogo
 route.post('/timer-mode', timerController.setTimerMode);

@@ -12,7 +12,7 @@ app.use(express.static(path.resolve(__dirname, 'public')));
 app.set('views', path.resolve(__dirname, 'src', 'views'));
 app.set('view engine', 'ejs');
 
-// Iniciando rotas
+// Iniciando rotas definidas
 app.use(routes);
 
 // Porta definida para o servidor
