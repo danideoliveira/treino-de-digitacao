@@ -118,27 +118,32 @@
   gap: 15px;
 }
 .section-config-options .div-back-button {
+  align-items: center;
   cursor: pointer;
   height: 50px;
+  filter: invert(0.1);
 }
 .section-config-options .div-back-button a {
-  font-size: 3rem;
-  color: #1a1a1a;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  width: 50px;
+  height: 50px;
   text-decoration: none;
-  display: inline-block;
-  padding: 5px 16px;
-  border-radius: 50%;
-  border: 1.5px solid #1a1a1a;
-  text-align: center;
   cursor: pointer;
 }
-.section-config-options .div-back-button a.dark {
-  color: #d3d3d3;
-  border: 1.5px solid #d3d3d3;
+.section-config-options .div-back-button a img {
+  width: 30px;
+  cursor: pointer;
+}
+.section-config-options .div-back-button a img.dark {
+  filter: invert(0.7);
 }
 .section-config-options .div-dark-mode {
   background-color: #f5f5f5;
   align-items: center;
+  height: 50px;
 }
 .section-config-options .div-dark-mode.dark {
   background-color: #1a1a1a;
@@ -163,6 +168,29 @@
   cursor: pointer;
 }
 .section-config-options .div-dark-mode .btn-dark-mode img.dark {
+  filter: invert(0.7);
+}
+.section-config-options .div-tips {
+  align-items: center;
+  height: 50px;
+}
+.section-config-options .div-tips a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  width: 50px;
+  height: 50px;
+  font-size: 2.5rem;
+  text-decoration: none;
+  color: #d3d3d3;
+  cursor: pointer;
+}
+.section-config-options .div-tips a img {
+  width: 30px;
+  cursor: pointer;
+}
+.section-config-options .div-tips a img.dark {
   filter: invert(0.7);
 }
 
@@ -381,7 +409,7 @@
 
 .container {
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
   align-items: center;
   flex-direction: row;
   width: 100%;
@@ -399,9 +427,10 @@
   width: 60%;
   height: 80%;
   gap: 1.5rem;
-  box-shadow: 0px 0px 20px 0px #b9b9b9;
+  box-shadow: 12px 12px 16px 0 rgba(0, 0, 0, 0.25), -8px -8px 12px 0 rgba(218, 217, 217, 0.3);
   padding: 4rem;
   content-visibility: auto;
+  border-radius: 20px;
 }
 .container .box.dark {
   box-shadow: 0px 0px 20px 0px #000000;
@@ -409,7 +438,8 @@
 .container .box p {
   font-size: 3rem;
 }
-.container .box .typed-word, .container .box .btn-submit {
+.container .box .typed-word,
+.container .box .btn-submit {
   font-size: 2.5rem;
 }
 .container .box .div-timer {
@@ -513,16 +543,16 @@
   background-color: #4fb64f;
   transition: 0.3s all ease;
 }
-.container .div-counter-tips {
+.container .div-counter-container {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   flex-direction: column;
-  width: 25%;
-  height: 90%;
+  width: 30%;
+  height: 60%;
   gap: 5rem;
 }
-.container .div-counter-tips .div-title {
+.container .div-counter-container .div-title {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -530,31 +560,31 @@
   width: 80%;
   gap: 3rem;
 }
-.container .div-counter-tips .div-title .title {
+.container .div-counter-container .div-title .title {
   font-size: 4rem;
   font-weight: 700;
   color: #4a4a4a;
   text-align: center;
 }
-.container .div-counter-tips .div-title .title.dark {
+.container .div-counter-container .div-title .title.dark {
   color: #959595;
 }
-.container .div-counter-tips h2, .container .div-counter-tips p {
+.container .div-counter-container p {
   color: #1a1a1a;
 }
-.container .div-counter-tips h2 {
+.container .div-counter-container h2 {
   font-size: 2.5rem;
 }
-.container .div-counter-tips h2.dark {
+.container .div-counter-container h2.dark {
   color: #d3d3d3;
 }
-.container .div-counter-tips p {
+.container .div-counter-container p {
   font-size: 3rem;
 }
-.container .div-counter-tips p.dark {
+.container .div-counter-container p.dark {
   color: #959595;
 }
-.container .div-counter-tips .div-counter {
+.container .div-counter-container .div-counter {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -562,30 +592,84 @@
   width: 80%;
   gap: 3rem;
 }
-.container .div-counter-tips .div-tips {
+
+.modal {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 99999;
+  opacity: 0;
+  transition: opacity 400ms ease-in;
+  pointer-events: none;
+}
+.modal:target {
+  opacity: 1;
+  pointer-events: auto;
+}
+.modal .container-modal-open {
+  width: 70%;
+  position: relative;
+  margin: 6% 14% auto;
+  padding: 25px;
+  background: #f5f5f5;
+  border-radius: 5px;
+}
+.modal .container-modal-open .div-tip-modal {
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
-  width: 60%;
-  gap: 2rem;
+  flex-direction: row;
+  width: 100%;
+  margin-bottom: 2.5rem;
+  height: 10rem;
 }
-.container .div-counter-tips .div-tips .div-img {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  gap: 1rem;
+.modal .container-modal-open .div-tip-modal .tip-example {
+  width: 50%;
 }
-.container .div-counter-tips .div-tips .div-img p {
-  font-size: 2rem;
+.modal .container-modal-open .div-tip-modal .tip-example .simbol {
+  padding-top: 1rem;
+  font-size: 3rem;
+  color: #1a1a1a;
+  font-weight: bold;
+}
+.modal .container-modal-open .div-tip-modal .tip-description {
+  width: 50%;
   text-align: justify;
 }
-.container .div-counter-tips .div-tips .div-img img {
-  width: 100px;
+.modal .container-modal-open .div-tip-modal .tip-description img {
+  width: 3.5rem;
+  filter: invert(0.2);
+  vertical-align: bottom;
 }
-.container .div-counter-tips .div-tips .div-img img.dark {
+.modal .container-modal-open .div-tip-modal .tip-description img.dark {
   filter: invert(0.7);
+}
+.modal .container-modal-open h2 {
+  font-size: 4rem;
+  margin-bottom: 3rem;
+  color: #4a4a4a;
+}
+.modal .container-modal-open p {
+  font-size: 2.5rem;
+  color: #4a4a4a;
+}
+.modal .close-modal {
+  position: absolute;
+  width: 30px;
+  right: 0;
+  top: 0;
+  text-align: center;
+  line-height: 30px;
+  border-radius: 50%;
+  font-size: 3rem;
+  font-weight: bold;
+  color: #ff5757;
+  text-decoration: none;
+  cursor: pointer;
 }
 
 footer {
@@ -604,11 +688,13 @@ footer.dark {
 footer a {
   cursor: pointer;
 }
-footer p, footer a {
+footer p,
+footer a {
   color: #1a1a1a;
   font-size: 1.5rem;
   text-decoration: none;
 }
-footer p.dark, footer a.dark {
+footer p.dark,
+footer a.dark {
   color: #d3d3d3;
 }/*# sourceMappingURL=style.css.map */

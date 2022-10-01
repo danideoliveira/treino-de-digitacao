@@ -17,132 +17,7 @@
     flex-direction: $flexDirection;
 }
 
-.wobble {
-    -webkit-animation-name: wobble;
-    animation-name: wobble;
-    -webkit-animation-duration: 1s;
-    animation-duration: 1s;
-    -webkit-animation-fill-mode: both;
-    animation-fill-mode: both;
-}
-
-@-webkit-keyframes wobble {
-    0% {
-        -webkit-transform: none;
-        transform: none;
-   }
-    15% {
-        -webkit-transform: translate3d(-25%, 0, 0) rotate3d(0, 0, 1, -5deg);
-        transform: translate3d(-25%, 0, 0) rotate3d(0, 0, 1, -5deg);
-   }
-    30% {
-        -webkit-transform: translate3d(20%, 0, 0) rotate3d(0, 0, 1, 3deg);
-        transform: translate3d(20%, 0, 0) rotate3d(0, 0, 1, 3deg);
-   }
-    45% {
-        -webkit-transform: translate3d(-15%, 0, 0) rotate3d(0, 0, 1, -3deg);
-        transform: translate3d(-15%, 0, 0) rotate3d(0, 0, 1, -3deg);
-   }
-    60% {
-        -webkit-transform: translate3d(10%, 0, 0) rotate3d(0, 0, 1, 2deg);
-        transform: translate3d(10%, 0, 0) rotate3d(0, 0, 1, 2deg);
-   }
-    75% {
-        -webkit-transform: translate3d(-5%, 0, 0) rotate3d(0, 0, 1, -1deg);
-        transform: translate3d(-5%, 0, 0) rotate3d(0, 0, 1, -1deg);
-   }
-    100% {
-        -webkit-transform: none;
-        transform: none;
-   }
-}
-
-@keyframes wobble {
-    0% {
-        -webkit-transform: none;
-        transform: none;
-   }
-    15% {
-        -webkit-transform: translate3d(-25%, 0, 0) rotate3d(0, 0, 1, -5deg);
-        transform: translate3d(-25%, 0, 0) rotate3d(0, 0, 1, -5deg);
-   }
-    30% {
-        -webkit-transform: translate3d(20%, 0, 0) rotate3d(0, 0, 1, 3deg);
-        transform: translate3d(20%, 0, 0) rotate3d(0, 0, 1, 3deg);
-   }
-    45% {
-        -webkit-transform: translate3d(-15%, 0, 0) rotate3d(0, 0, 1, -3deg);
-        transform: translate3d(-15%, 0, 0) rotate3d(0, 0, 1, -3deg);
-   }
-    60% {
-        -webkit-transform: translate3d(10%, 0, 0) rotate3d(0, 0, 1, 2deg);
-        transform: translate3d(10%, 0, 0) rotate3d(0, 0, 1, 2deg);
-   }
-    75% {
-        -webkit-transform: translate3d(-5%, 0, 0) rotate3d(0, 0, 1, -1deg);
-        transform: translate3d(-5%, 0, 0) rotate3d(0, 0, 1, -1deg);
-   }
-    100% {
-        -webkit-transform: none;
-        transform: none;
-   }
-}
-
-.tada {
-    -webkit-animation-name: tada;
-    animation-name: tada;
-    -webkit-animation-duration: 1s;
-    animation-duration: 1s;
-    -webkit-animation-fill-mode: both;
-    animation-fill-mode: both;
-}
-
-@-webkit-keyframes tada {
-    0% {
-        -webkit-transform: scale3d(1, 1, 1);
-        transform: scale3d(1, 1, 1);
-   }
-    10%, 20% {
-        -webkit-transform: scale3d(.9, .9, .9) rotate3d(0, 0, 1, -3deg);
-        transform: scale3d(.9, .9, .9) rotate3d(0, 0, 1, -3deg);
-   }
-    30%, 50%, 70%, 90% {
-        -webkit-transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, 3deg);
-        transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, 3deg);
-   }
-    40%, 60%, 80% {
-        -webkit-transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, -3deg);
-        transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, -3deg);
-   }
-    100% {
-        -webkit-transform: scale3d(1, 1, 1);
-        transform: scale3d(1, 1, 1);
-   }
-}
-
-@keyframes tada {
-    0% {
-        -webkit-transform: scale3d(1, 1, 1);
-        transform: scale3d(1, 1, 1);
-   }
-    10%, 20% {
-        -webkit-transform: scale3d(.9, .9, .9) rotate3d(0, 0, 1, -3deg);
-        transform: scale3d(.9, .9, .9) rotate3d(0, 0, 1, -3deg);
-   }
-    30%, 50%, 70%, 90% {
-        -webkit-transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, 3deg);
-        transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, 3deg);
-   }
-    40%, 60%, 80% {
-        -webkit-transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, -3deg);
-        transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, -3deg);
-   }
-    100% {
-        -webkit-transform: scale3d(1, 1, 1);
-        transform: scale3d(1, 1, 1);
-   }
-}
-
+@import 'animations';
 @import 'variables';
 
 .section-config-options {
@@ -153,52 +28,80 @@
     gap: 15px;
 
     .div-back-button {
+        align-items: center;
         cursor: pointer;
         height: 50px;
+        filter: invert(0.1);
 
         a {
-            font-size: 3rem;
-            color: $darkModeBlack;
+            @include setFlexBox(center, center, row);
+            width: 50px;
+            height: 50px;
             text-decoration: none;
-            display: inline-block;
-            padding: 5px 16px;
-            border-radius: 50%;
-            border: 1.5px solid $darkModeBlack;
-            text-align: center;
             cursor: pointer;
-    
-            &.dark {
-                color: $darkModeWhite;
-                border: 1.5px solid $darkModeWhite;
+
+            img {
+                width: 30px;
+                cursor: pointer;
+
+                &.dark {
+                    filter: invert(0.7);
+                }
             }
+
         }
     }
 
     .div-dark-mode {
         background-color: $lightModeWhite;
         align-items: center;
-        
+        height: 50px;
+
         &.dark {
             background-color: $darkModeBlack;
         }
-    
+
         .btn-dark-mode {
             @include setFlexBox(center, center, row);
             width: 50px;
             height: 50px;
-            font-size: 1.8rem; 
+            font-size: 1.8rem;
             background-color: $lightModeWhite;
             border-radius: 50px;
             cursor: pointer;
-        
+
             &.dark {
                 background-color: $darkModeBlack;
             }
-        
+
             img {
                 width: 30px;
                 cursor: pointer;
-        
+
+                &.dark {
+                    filter: invert(0.7);
+                }
+            }
+        }
+    }
+
+    .div-tips {
+        align-items: center;
+        height: 50px;
+
+        a {
+            @include setFlexBox(center, center, row);
+            width: 50px;
+            height: 50px;
+            font-size: 2.5rem;
+            text-decoration: none;
+            color: $darkModeWhite;
+            cursor: pointer;
+
+            img {
+                width: 30px;
+                cursor: pointer;
+
                 &.dark {
                     filter: invert(0.7);
                 }
@@ -212,7 +115,7 @@
 @import 'timerSettings';
 
 .container {
-    @include setFlexBox(center, center, row);
+    @include setFlexBox(flex-end, center, row);
     width: 100%;
     height: 95vh;
     background-color: $lightModeWhite;
@@ -226,19 +129,22 @@
         width: 60%;
         height: 80%;
         gap: 1.5rem;
-        box-shadow: 0px 0px 20px 0px $darkModeWhiteShadow;
+        box-shadow: 12px 12px 16px 0 rgb(0 0 0 / 25%), 
+                    -8px -8px 12px 0 rgba(218, 217, 217, 0.3);
         padding: 4rem;
         content-visibility: auto;
+        border-radius: 20px;
 
         &.dark {
-            box-shadow: 0px 0px 20px 0px #000000;
+            box-shadow: 0px 0px 20px 0px $absoluteBlack;
         }
-    
+
         p {
             font-size: 3rem;
         }
-        
-        .typed-word, .btn-submit {
+
+        .typed-word,
+        .btn-submit {
             font-size: 2.5rem;
         }
 
@@ -258,19 +164,19 @@
 
                 img {
                     filter: invert(0);
-                    
+
                     &.dark {
                         filter: invert(0.9);
                     }
                 }
-    
+
                 p {
                     color: $darkModeBlack;
-                    
+
                     &.dark {
                         color: $lightModeWhite;
                     }
-                    
+
                     &.time-over {
                         color: $incorrectRed;
                     }
@@ -278,7 +184,7 @@
                 }
             }
         }
-        
+
         .div-random-word {
             @include setFlexBox(center, center, column);
             width: 100%;
@@ -287,22 +193,22 @@
 
             .random-word {
                 @include setFlexBox(center, center, row);
-                width: 100%;            
-    
+                width: 100%;
+
                 p {
                     font-size: 4rem;
                     color: $darkModeBlack;
                     transition: 0.5s all ease;
 
                     &.dark {
-                    color: $lightModeWhite;
-                }
+                        color: $lightModeWhite;
+                    }
                 }
 
                 p.correct {
                     color: $correctGreen
                 }
-    
+
                 p.incorrect {
                     color: $incorrectRed;
                 }
@@ -314,7 +220,7 @@
             width: 50%;
             gap: 3rem;
             z-index: 1;
-            
+
             .typed-word {
                 text-align: center;
                 box-shadow: 1px 6px 9px 1px $darkModeWhiteShadow;
@@ -335,14 +241,14 @@
                 }
             }
 
-            .btn-submit {  
+            .btn-submit {
                 background-color: $glowGreen;
                 transition: 0.3s all ease;
                 font-weight: 500;
                 font-size: 1.8rem;
                 width: 100%;
                 height: 5rem;
-    
+
                 &:hover {
                     cursor: pointer;
                     background-color: $correctGreen;
@@ -352,10 +258,10 @@
         }
     }
 
-    .div-counter-tips {
-        @include setFlexBox(center, center, column);
-        width: 25%;
-        height: 90%;
+    .div-counter-container {
+        @include setFlexBox(flex-start, center, column);
+        width: 30%;
+        height: 60%;
         gap: 5rem;
 
         .div-title {
@@ -375,7 +281,7 @@
             }
         }
 
-        h2, p {
+        p {
             color: $darkModeBlack;
         }
 
@@ -400,32 +306,102 @@
             width: 80%;
             gap: 3rem;
         }
+    }
+}
 
-        .div-tips {
-            @include setFlexBox(center, center, column);
-            width: 60%;
-            gap: 2rem;
 
-            .div-img {
-                @include setFlexBox(center, center, column);
-                gap: 1rem;
-
-                p {
-                    font-size: 2rem;
-                    text-align: justify;
-                }
+.modal {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 99999;
+    opacity: 0;
+    -webkit-transition: opacity 400ms ease-in;
+    -moz-transition: opacity 400ms ease-in;
+    transition: opacity 400ms ease-in;
+    pointer-events: none;
     
+    &:target {
+        opacity: 1;
+        pointer-events: auto;
+    }
+    
+    .container-modal-open {
+        width: 70%;
+        position: relative;
+        margin: 6% 14% auto;
+        padding: 25px;
+        background: $lightModeWhite;
+        border-radius: 5px;
+
+        .div-tip-modal {
+            @include setFlexBox(center, center, row);
+            width: 100%;
+            margin-bottom: 2.5rem;
+            height: 10rem;
+
+            .tip-example {
+                width: 50%;
+                .simbol {
+                    padding-top: 1rem;
+                    font-size: 3rem;
+                    color: $darkModeBlack;
+                    font-weight: bold;
+                }
+
+            }
+
+            .tip-description {
+                width: 50%;
+                text-align: justify;
+
                 img {
-                    width: 100px;
+                    width: 3.5rem;
+                    filter: invert(0.2);
+                    vertical-align: bottom;
 
                     &.dark {
                         filter: invert(0.7);
                     }
                 }
-            }        
+            }
+        }
+
+        h2 {
+            font-size: 4rem;
+            margin-bottom: 3rem;
+            color: $titleGrey;
+        }
+
+        p {
+            font-size: 2.5rem;
+            color: $titleGrey;
         }
     }
+
+    .close-modal {
+        position: absolute;
+        width: 30px;
+        right: 0;
+        top: 0;
+        text-align: center;
+        line-height: 30px;
+        //background: #ff4545;
+        border-radius: 50%;
+        font-size: 3rem;
+        font-weight: bold;
+        color: $incorrectRed;
+        text-decoration: none;
+        cursor: pointer;
+    }
 }
+
+
+
 
 footer {
     @include setFlexBox(center, center, row);
@@ -442,7 +418,8 @@ footer {
         cursor: pointer;
     }
 
-    p, a {
+    p,
+    a {
         color: $darkModeBlack;
         font-size: 1.5rem;
         text-decoration: none;
@@ -459,14 +436,12 @@ footer {
 }
 
 // Tablet
-@media (min-width: 320px) and (max-width: 900px) {
-
-}
+@media (min-width: 320px) and (max-width: 900px) {}
 
 @media (min-width: 320px) and (max-width: 900px) and (orientation: landscape) {
     // GLOBAL STYLE
 }
-        
+
 // Mobile
 @media (min-width: 320px) and (max-width: 680px) {
     // GLOBAL STYLE
