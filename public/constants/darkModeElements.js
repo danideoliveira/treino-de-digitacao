@@ -12,7 +12,7 @@ export const darkModeElements = [
     {element: '.random-word > p'},
     {element: '.div-dark-mode'},
     {element: '.div-back-button'},
-    {element: '.div-back-button > a'},
+    {element: '.div-back-button > a > img'},
     {element: '.btn-dark-mode'},
     {element: '.btn-dark-mode > img'},
     {element: '.div-timer-secondary > img'},
@@ -34,4 +34,5 @@ export const darkModeElements = [
     {element: 'footer'},
     {element: 'footer > p > a'},
     {element: 'footer > p'},
+    {element: '.div-tips > a > img'},
 ];
