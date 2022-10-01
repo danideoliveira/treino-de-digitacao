@@ -11,13 +11,16 @@
 <body>
     <section class="section-config-options">
         <div class="div-back-button">
-            <a href="/timer-settings">&#8249;</a>
+            <a href="/timer-settings"><img src="assets/img/icon_back.png" title="Voltar" alt="Voltar Icon"></a>
         </div>
         <div class="div-dark-mode">
             <button class="btn-dark-mode">
-                <img src="assets/img/moon_icon.png" alt="Lua icon">
+                <img src="assets/img/moon_icon.png" title="Modo escuro" alt="Lua icon">
             </button>
-        </div> 
+        </div>
+        <div class="div-tips">
+            <a href="#open-tips"><img src="assets/img/icon_tips.png" title="Dicas" alt="Dica icon"></a>
+        </div>
     </section>
 
     <section class="container">
@@ -41,7 +44,7 @@
             </div>
         </div>
                  
-        <div class="div-counter-tips">
+        <div class="div-counter-container">
             <div class="div-title">
                 <h1 class="title">TREINO DE DIGITAÇÃO</h1>
             </div>
@@ -50,14 +53,52 @@
                 <p class="counter">0</p>
             </div>
             
-            <div class="div-tips">
+            <!--<div class="div-tips">
                 <h2 class="tips-title">Dica</h2>
 
                 <div class="div-img">
                     <p>Segure a tecla SHIFT para colocar uma letra em maiúscula.</p>
                     <img src="assets/img/shift_icon.png" alt="Dica">
                 </div>
+            </div>-->
+        </div>
+    </section>
+
+    <section id="open-tips" class="modal">
+        <div class="container-modal-open">
+            <a href="#close-tips" title="Fechar" class="close-modal">x</a>
+            <h2>DICAS</h2>
+            <div class="div-tip-modal">
+                <div class="tip-example">
+                    <p>Para inserir uma letra maiúscula:</p>
+                    <p class="simbol">A B C D E</p>
+                </div>
+                <div class="tip-description">    
+                    <p>Basta segurar a tecla SHIFT <img src="assets/img/shift_icon.png" alt="Ícone tecla SHIFT"> e apertar a tecla da letra desejada.</p> 
+                </div>
             </div>
+            <div class="div-tip-modal">
+                <div class="tip-example">
+                    <p>Para inserir os símbolos:</p>
+                    <p class="simbol">´ ~</p>
+                </div>
+                <div class="tip-description">
+                    <p>Basta apertar a tecla do acento desejado e 
+                    depois apertar a tecla da letra que deseja inserir o acento.
+                    </p> 
+                </div>
+            </div>
+            <div class="div-tip-modal">
+                <div class="tip-example">
+                    <p>Para inserir os símbolos:</p>
+                    <p class="simbol">` ^ ? ! @ # $ % & * ( ) :</p>
+                </div>
+                <div class="tip-description">
+                    <p>Basta segurar a tecla SHIFT <img src="assets/img/shift_icon.png" alt="Ícone tecla SHIFT">  e apertar a tecla do símbolo desejado. 
+                        Caso seja um acento, depois basta apertar a tecla da letra que deseja inserir.
+                    </p> 
+                </div>
+            </div>           
         </div>
     </section>
 
