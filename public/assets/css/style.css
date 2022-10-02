@@ -217,6 +217,7 @@
   box-shadow: 0px 0px 20px 0px #d3d3d3;
   padding: 4rem;
   content-visibility: auto;
+  border-radius: 20px;
 }
 .container-menu .box-menu.dark {
   box-shadow: 0px 0px 20px 0px #000000;
@@ -309,6 +310,7 @@
   box-shadow: 0px 0px 20px 0px #d3d3d3;
   padding: 4rem;
   content-visibility: auto;
+  border-radius: 20px;
 }
 .container-timer-settings .box-timer-settings.dark {
   box-shadow: 0px 0px 20px 0px #000000;
