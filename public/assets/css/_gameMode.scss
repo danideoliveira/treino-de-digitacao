@@ -1,0 +1,194 @@
+.container {
+    @include setFlexBox(flex-end, center, row);
+    width: 100%;
+    height: 95vh;
+    background-color: $lightModeWhite;
+
+    &.dark {
+        background-color: $darkModeBlack;
+    }
+
+    .box {
+        @include setFlexBox(space-evenly, center, column);
+        width: 60%;
+        height: 80%;
+        gap: 1.5rem;
+        box-shadow: 12px 12px 16px 0 rgb(0 0 0 / 25%), 
+                    -8px -8px 12px 0 rgba(218, 217, 217, 0.3);
+        padding: 4rem;
+        content-visibility: auto;
+        border-radius: 20px;
+
+        &.dark {
+            box-shadow: 0px 0px 20px 0px $absoluteBlack;
+        }
+
+        p {
+            font-size: 3rem;
+        }
+
+        .typed-word,
+        .btn-submit {
+            font-size: 2.5rem;
+        }
+
+        .div-timer {
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            display: flex;
+            align-items: flex-start;
+            justify-content: flex-start;
+            padding: 30px;
+            z-index: 0;
+
+            .div-timer-secondary {
+                @include setFlexBox(center, flex-end, row);
+                gap: 5px;
+
+                img {
+                    filter: invert(0);
+
+                    &.dark {
+                        filter: invert(0.9);
+                    }
+                }
+
+                p {
+                    color: $darkModeBlack;
+
+                    &.dark {
+                        color: $lightModeWhite;
+                    }
+
+                    &.time-over {
+                        color: $incorrectRed;
+                    }
+
+                }
+            }
+        }
+
+        .div-random-word {
+            @include setFlexBox(center, center, column);
+            width: 100%;
+            height: 25%;
+            z-index: 1;
+
+            .random-word {
+                @include setFlexBox(center, center, row);
+                width: 100%;
+
+                p {
+                    font-size: 4rem;
+                    color: $darkModeBlack;
+                    transition: 0.5s all ease;
+
+                    &.dark {
+                        color: $lightModeWhite;
+                    }
+                }
+
+                p.correct {
+                    color: $correctGreen
+                }
+
+                p.incorrect {
+                    color: $incorrectRed;
+                }
+            }
+        }
+
+        .div-input-btn {
+            @include setFlexBox(center, center, column);
+            width: 50%;
+            gap: 3rem;
+            z-index: 1;
+
+            .typed-word {
+                text-align: center;
+                box-shadow: 1px 6px 9px 1px $darkModeWhiteShadow;
+                width: 100%;
+                height: 5rem;
+                cursor: auto;
+                background-color: $lightModeWhite;
+                color: $darkModeBlack;
+
+                &:focus {
+                    outline: none;
+                }
+
+                &.dark {
+                    color: $lightModeWhite;
+                    background-color: $darkModeBlack;
+                    box-shadow: 0px 0px 20px 0px $absoluteBlack;
+                }
+            }
+
+            .btn-submit {
+                background-color: $glowGreen;
+                transition: 0.3s all ease;
+                font-weight: 500;
+                font-size: 1.8rem;
+                width: 100%;
+                height: 5rem;
+
+                &:hover {
+                    cursor: pointer;
+                    background-color: $correctGreen;
+                    transition: 0.3s all ease;
+                }
+            }
+        }
+    }
+
+    .div-counter-container {
+        @include setFlexBox(flex-start, center, column);
+        width: 30%;
+        height: 60%;
+        gap: 5rem;
+
+        .div-title {
+            @include setFlexBox(center, center, column);
+            width: 80%;
+            gap: 3rem;
+
+            .title {
+                font-size: 4rem;
+                font-weight: 700;
+                color: $titleGrey;
+                text-align: center;
+
+                &.dark {
+                    color: $darkModetitleGrey
+                }
+            }
+        }
+
+        p {
+            color: $darkModeBlack;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+
+            &.dark {
+                color: $darkModeWhite;
+            }
+        }
+
+        p {
+            font-size: 3rem;
+
+            &.dark {
+                color: $darkModetitleGrey
+            }
+        }
+
+        .div-counter {
+            @include setFlexBox(center, center, column);
+            width: 80%;
+            gap: 3rem;
+        }
+    }
+}
