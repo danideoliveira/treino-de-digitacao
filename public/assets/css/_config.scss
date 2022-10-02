@@ -1,0 +1,89 @@
+.section-config-options {
+    @include setFlexBox(flex-start, center, column);
+    position: fixed;
+    height: 100%;
+    padding: 25px 15px;
+    gap: 15px;
+
+    .div-back-button {
+        align-items: center;
+        cursor: pointer;
+        height: 50px;
+        filter: invert(0.1);
+
+        a {
+            @include setFlexBox(center, center, row);
+            width: 50px;
+            height: 50px;
+            text-decoration: none;
+            cursor: pointer;
+
+            img {
+                width: 30px;
+                cursor: pointer;
+
+                &.dark {
+                    filter: invert(0.7);
+                }
+            }
+
+        }
+    }
+
+    .div-dark-mode {
+        background-color: $lightModeWhite;
+        align-items: center;
+        height: 50px;
+
+        &.dark {
+            background-color: $darkModeBlack;
+        }
+
+        .btn-dark-mode {
+            @include setFlexBox(center, center, row);
+            width: 50px;
+            height: 50px;
+            font-size: 1.8rem;
+            background-color: $lightModeWhite;
+            border-radius: 50px;
+            cursor: pointer;
+
+            &.dark {
+                background-color: $darkModeBlack;
+            }
+
+            img {
+                width: 30px;
+                cursor: pointer;
+
+                &.dark {
+                    filter: invert(0.7);
+                }
+            }
+        }
+    }
+
+    .div-tips {
+        align-items: center;
+        height: 50px;
+
+        a {
+            @include setFlexBox(center, center, row);
+            width: 50px;
+            height: 50px;
+            font-size: 2.5rem;
+            text-decoration: none;
+            color: $darkModeWhite;
+            cursor: pointer;
+
+            img {
+                width: 30px;
+                cursor: pointer;
+
+                &.dark {
+                    filter: invert(0.7);
+                }
+            }
+        }
+    }
+}
