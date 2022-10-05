@@ -3,13 +3,14 @@
     position: fixed;
     height: 100%;
     padding: 25px 15px;
-    gap: 15px;
+    //gap: 15px;
 
     .div-back-button {
         align-items: center;
         cursor: pointer;
         height: 50px;
         filter: invert(0.1);
+        margin-bottom: 15px;
 
         a {
             @include setFlexBox(center, center, row);
@@ -17,6 +18,7 @@
             height: 50px;
             text-decoration: none;
             cursor: pointer;
+            border-radius: 50px;
 
             img {
                 width: 30px;
@@ -31,12 +33,13 @@
     }
 
     .div-dark-mode {
-        background-color: $lightModeWhite;
+        background-color: $container-background;
         align-items: center;
         height: 50px;
+        margin-bottom: 15px;
 
         &.dark {
-            background-color: $darkModeBlack;
+            background-color: $dark-container-background;
         }
 
         .btn-dark-mode {
@@ -44,12 +47,12 @@
             width: 50px;
             height: 50px;
             font-size: 1.8rem;
-            background-color: $lightModeWhite;
+            background-color: $container-background;
             border-radius: 50px;
             cursor: pointer;
 
             &.dark {
-                background-color: $darkModeBlack;
+                background-color: $dark-container-background;
             }
 
             img {
@@ -66,6 +69,7 @@
     .div-tips {
         align-items: center;
         height: 50px;
+        margin-bottom: 15px;
 
         a {
             @include setFlexBox(center, center, row);
@@ -73,8 +77,9 @@
             height: 50px;
             font-size: 2.5rem;
             text-decoration: none;
-            color: $darkModeWhite;
+            color: $dark-text-color;
             cursor: pointer;
+            border-radius: 50px;
 
             img {
                 width: 30px;
@@ -86,4 +91,44 @@
             }
         }
     }
+}
+
+
+@media (min-width: 901px) and (max-width: 1279px) {
+    // GLOBAL STYLE
+}
+
+// Tablet
+@media (min-width: 320px) and (max-width: 900px) {
+    // GLOBAL STYLE
+}
+
+@media (min-width: 320px) and (max-width: 900px) and (orientation: landscape) {
+    // GLOBAL STYLE
+}
+
+// Mobile
+@media (min-width: 320px) and (max-width: 680px) {
+    .section-config-options {
+        @include setFlexBox(space-around, center, row);
+        position: relative;
+        height: auto;
+        padding-top: 3rem;
+        width: 100%;
+        background-color: $container-background;
+
+        &.dark {
+            background-color: $dark-container-background;
+        }
+
+        .div-back-button, 
+        .div-dark-mode,
+        .div-tips {
+            margin-bottom: 0;
+        }
+    }
+}
+
+@media (min-width: 320px) and (max-width: 680px) and (orientation: landscape) {
+    // GLOBAL STYLE
 }

@@ -2,10 +2,10 @@
     @include setFlexBox(center, center, row);
     width: 100%;
     height: 95vh;
-    background-color: $lightModeWhite;
+    background-color: $container-background;
 
     &.dark {
-        background-color: $darkModeBlack;
+        background-color: $dark-container-background;
     }
 
     .box-timer-settings {
@@ -13,20 +13,20 @@
         width: 60%;
         height: 80%;
         gap: 1.5rem;
-        box-shadow: 0px 0px 20px 0px $darkModeWhite;
+        box-shadow: 0px 0px 20px 0px $components-shadow;
         padding: 4rem;
-        content-visibility: auto;
+        overflow: hidden;
         border-radius: 20px;
 
         &.dark {
-            box-shadow: 0px 0px 20px 0px $absoluteBlack;
+            box-shadow: 0px 0px 20px 0px $dark-components-shadow;
         }
 
         .title-timer-settings {
             font-size: 3.2rem;
 
             &.dark {
-                color: $darkModeWhite;
+                color: $dark-text-color;
             }
         }
 
@@ -57,11 +57,11 @@
                             font-size: 2.5rem;
                             cursor: pointer;
                             text-align: center;
-                            background-color: $glowGreen;
-                            color: $darkModeBlack;
+                            background-color: $button-submit-background;
+                            color: $text-color;
                             
                             &:hover {
-                                background-color: $darkModeWhite;
+                                background-color: $dark-text-color;
                             }
                         }
                         
@@ -69,7 +69,7 @@
                             width: 100%;
                             height: 50px;
                             font-size: 2.5rem;
-                            box-shadow: 0px 0px 20px 0px $darkModeWhite;
+                            box-shadow: 0px 4px 4px rgba($components-shadow, 0.25);
                             cursor: auto;
                             text-align: center;
                             
@@ -84,9 +84,9 @@
                             }
         
                             &.dark {
-                                color: $darkModeWhite;
-                                background-color: $darkModeBlack;
-                                box-shadow: 0px 0px 20px 0px $absoluteBlack;
+                                color: $dark-text-color;
+                                background-color: $dark-container-background;
+                                box-shadow: 0px 4px 4px $dark-components-shadow;
                             }
                         }
         
@@ -94,10 +94,10 @@
 
                     p {
                         font-size: 2.5rem;
-                        color: $darkModeBlack;
+                        color: $text-color;
                         
                         &.dark {
-                            color: $darkModeWhite;
+                            color: $dark-text-color;
                         }
                     }
 
@@ -108,15 +108,15 @@
                     width: 100%;
                     height: 40%;
                     font-size: 1.8rem;
-                    background-color: $glowGreen;
+                    background-color: $button-submit-background;
                     transition: 0.3s ease-out;
 
                     &.dark {
-                        background-color: $darkModeWhite;
+                        background-color: $dark-text-color;
                     }
 
                     &:hover {
-                        background-color: $darkModeWhite;
+                        background-color: $dark-text-color;
                         transition: 0.3s ease-out;
                     }
                 }
