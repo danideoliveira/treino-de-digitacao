@@ -35,4 +35,5 @@ export const darkModeElements = [
     {element: 'footer > p > a'},
     {element: 'footer > p'},
     {element: '.div-tips > a > img'},
+    {element: '.section-config-options'},
 ];
