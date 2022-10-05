@@ -1,0 +1,135 @@
+.modal {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 99999;
+    opacity: 0;
+    -webkit-transition: opacity 400ms ease-in;
+    -moz-transition: opacity 400ms ease-in;
+    transition: opacity 400ms ease-in;
+    pointer-events: none;
+    
+    &:target {
+        opacity: 1;
+        pointer-events: auto;
+    }
+    
+    .container-modal-open {
+        width: 70%;
+        position: relative;
+        margin: 6% 14% auto;
+        padding: 25px;
+        background: $container-background;
+        border-radius: 5px;
+
+        .div-tip-modal {
+            @include setFlexBox(center, center, row);
+            width: 100%;
+            margin-bottom: 2.5rem;
+            height: 10rem;
+
+            .tip-example {
+                width: 50%;
+                .simbol {
+                    padding-top: 1rem;
+                    font-size: 3rem;
+                    color: $text-color;
+                    font-weight: bold;
+                }
+
+            }
+
+            .tip-description {
+                width: 50%;
+                text-align: justify;
+
+                img {
+                    width: 3.5rem;
+                    filter: invert(0.2);
+                    vertical-align: bottom;
+
+                    &.dark {
+                        filter: invert(0.7);
+                    }
+                }
+            }
+        }
+
+        h2 {
+            font-size: 4rem;
+            margin-bottom: 3rem;
+            color: $title-color;
+        }
+
+        p {
+            font-size: 2.5rem;
+            color: $title-color;
+        }
+    }
+
+    .close-modal {
+        position: absolute;
+        width: 30px;
+        right: 0;
+        top: 0;
+        text-align: center;
+        line-height: 30px;
+        //background: #ff4545;
+        border-radius: 50%;
+        font-size: 3rem;
+        font-weight: bold;
+        color: $wrong-answer-color;
+        text-decoration: none;
+        cursor: pointer;
+    }
+}
+
+
+
+@media (min-width: 901px) and (max-width: 1279px) {
+    // GLOBAL STYLE
+}
+
+// Tablet
+@media (min-width: 320px) and (max-width: 900px) {
+    .modal {   
+        .container-modal-open {
+            margin: 0 auto;
+            height: auto;
+            width: 90%;
+            top: 10%;
+    
+            .div-tip-modal {
+                @include setFlexBox(center, center, row);
+                height: auto;
+    
+                .tip-example {
+                    .simbol {
+                        font-size: 2.5rem;
+                    }
+    
+                }
+            }
+    
+            p {
+                font-size: 2.5rem;
+            }
+        }
+    }
+}
+
+@media (min-width: 320px) and (max-width: 900px) and (orientation: landscape) {
+    // GLOBAL STYLE
+}
+
+// Mobile
+@media (min-width: 320px) and (max-width: 680px) {
+}
+
+@media (min-width: 320px) and (max-width: 680px) and (orientation: landscape) {
+    // GLOBAL STYLE
+}

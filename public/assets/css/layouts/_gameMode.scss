@@ -1,0 +1,284 @@
+.container {
+    @include setFlexBox(flex-end, center, row);
+    width: 100%;
+    height: 95vh;
+    background-color: $container-background;
+
+    &.dark {
+        background-color: $dark-container-background;
+    }
+
+    .box {
+        @include setFlexBox(space-evenly, center, column);
+        width: 60%;
+        height: 80%;
+        gap: 1.5rem;
+        box-shadow: 12px 12px 16px 0 rgb(0 0 0 / 25%), 
+                    -8px -8px 12px 0 rgba(218, 217, 217, 0.3);
+        padding: 4rem;
+        //content-visibility: auto;
+        border-radius: 20px;
+        position: relative;
+
+        &.dark {
+            box-shadow: 0px 0px 20px 0px $dark-components-shadow;
+        }
+
+        p {
+            font-size: 3rem;
+        }
+
+        .typed-word,
+        .btn-submit {
+            font-size: 2.5rem;
+        }
+
+        .div-timer {
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            display: flex;
+            align-items: flex-start;
+            justify-content: flex-start;
+            padding: 30px;
+            z-index: 0;
+
+            .div-timer-secondary {
+                @include setFlexBox(center, flex-end, row);
+                gap: 5px;
+
+                img {
+                    filter: invert(0);
+
+                    &.dark {
+                        filter: invert(0.9);
+                    }
+                }
+
+                p {
+                    color: $text-color;
+
+                    &.dark {
+                        color: $dark-text-color
+                    }
+
+                    &.time-over {
+                        color: $wrong-answer-color;
+                    }
+
+                }
+            }
+        }
+
+        .div-random-word {
+            @include setFlexBox(center, center, column);
+            width: 100%;
+            height: 25%;
+            z-index: 1;
+            text-align: center;
+
+            .random-word {
+                @include setFlexBox(center, center, row);
+                width: 100%;
+
+                p {
+                    font-size: 4rem;
+                    color: $text-color;
+                    transition: 0.5s all ease;
+
+                    &.dark {
+                        color: $dark-text-color;
+                    }
+                }
+
+                p.correct {
+                    color: $right-answer-color;
+                }
+
+                p.incorrect {
+                    color: $wrong-answer-color;
+                }
+            }
+        }
+
+        .div-input-btn {
+            @include setFlexBox(center, center, column);
+            width: 50%;
+            //gap: 3rem;
+            z-index: 1;
+
+            .typed-word {
+                text-align: center;
+                box-shadow: 1px 6px 9px 1px $components-shadow;
+                width: 100%;
+                height: 5rem;
+                cursor: auto;
+                background-color: $container-background;
+                color: $text-color;
+                border-radius: 5px;
+                margin-bottom: 3rem;
+
+                &:focus {
+                    outline: none;
+                }
+
+                &.dark {
+                    color: $dark-text-color;
+                    background-color: $dark-container-background;
+                    box-shadow: 0px 0px 20px 0px $dark-components-shadow;
+                }
+            }
+
+            .btn-submit {
+                background-color: $button-submit-background;
+                transition: 0.3s all ease;
+                font-weight: 500;
+                font-size: 1.8rem;
+                width: 100%;
+                height: 5rem;
+                box-shadow: 0px 4px 4px rgba($dark-components-shadow, 0.336);
+                border-radius: 5px;
+
+                &:hover {
+                    cursor: pointer;
+                    //background-color: rgb(81, 199, 81);
+                    background-color: $button-submit-hover;
+                    transition: 0.3s all ease;
+                }
+            }
+        }
+    }
+
+    .div-counter-container {
+        @include setFlexBox(flex-start, center, column);
+        width: 30%;
+        height: 60%;
+        //gap: 5rem;
+
+        .div-title {
+            @include setFlexBox(center, center, column);
+            width: 80%;
+            //gap: 3rem;
+            margin-bottom: 3rem;
+
+            .title {
+                font-size: 4rem;
+                font-weight: 700;
+                color: $title-color;
+                text-align: center;
+
+                &.dark {
+                    color: $dark-title-color;
+                }
+            }
+        }
+
+        p {
+            color: $text-color
+        }
+
+        h2 {
+            font-size: 2.5rem;
+
+            &.dark {
+                color: $dark-text-color;
+            }
+        }
+
+        p {
+            font-size: 3rem;
+
+            &.dark {
+                color: $dark-text-color;
+            }
+        }
+
+        .div-counter {
+            @include setFlexBox(center, center, column);
+            width: 80%;
+
+            .counter-title {
+                margin-bottom: 3rem;
+            }
+        }
+    }
+}
+
+
+@media (min-width: 901px) and (max-width: 1279px) {
+    html {
+        font-size: 55%;
+    }
+    .container {
+        .box {
+            height: 70%;
+        }
+    }
+}
+
+// Tablet
+@media (min-width: 320px) and (max-width: 900px) {
+    .container {
+        @include setFlexBox(center, center, column-reverse);
+
+        .box {
+            height: 50%;
+            width: 80%;
+
+            .div-input-btn {
+                width: 80%;
+            }
+        }
+
+        .div-counter-container {
+            height: auto;
+            margin-bottom: 5rem;
+        }
+    }
+}
+
+@media (min-width: 320px) and (max-width: 900px) and (orientation: landscape) {
+    // GLOBAL STYLE
+}
+
+// Mobile
+@media (min-width: 320px) and (max-width: 680px) {
+    html {
+        font-size: 45%;
+    }
+
+    body {
+        background-color: $container-background;
+
+        &.dark {
+            background-color: $dark-container-background;
+        }
+    }
+
+    .container {
+        height: 640px;
+        
+        .box {
+            height: 400px;
+        }
+
+        .div-counter-container {
+            width: 80%;
+
+            .div-counter {
+                .counter-title, 
+                .counter {
+                    font-size: 3.5rem;
+                }
+            }
+
+            .div-title > .title {
+                font-size: 4.5rem;
+            }
+        }
+    }
+}
+
+@media (min-width: 320px) and (max-width: 680px) and (orientation: landscape) {
+    // GLOBAL STYLE
+}
