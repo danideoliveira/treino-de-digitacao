@@ -1,11 +1,79 @@
+@use "sass:map";
+
+/*
 $absoluteBlack: #000000;
-$correctGreen: #4fb64f;
+$green-mid: #4fb64f;
 $incorrectRed: #ff5757;
 $lightModeWhite: #f5f5f5;
 $titleGrey: #4a4a4a;
-$glowGreen: #30ec69;
-$glowGreenShadow: #30ec68ab;
+$green-light: #30ec69;
+//$glowGreenShadow: #30ec68ab;
 $darkModeBlack: #1a1a1a;
 $darkModeWhite: #d3d3d3;
 $darkModeWhiteShadow: #b9b9b9;
 $darkModetitleGrey: #959595;
+*/
+
+// Colors
+$black-dark: #000000;
+
+$green-light: #30ec69;
+$green-mid: #4fb64f;
+$red-light: #ff5757;
+
+$white-light: #f5f5f5;
+$white-mid: #d3d3d3;
+
+$grey-light: #959595;
+$grey-mid: #4a4a4a;
+$grey-dark: #1a1a1a;
+
+//$glowGreenShadow: #30ec68ab;
+//$darkModeWhiteShadow: #b9b9b9;
+
+
+// Components - Padrão
+$container-background: $white-light;
+$button-submit-background: $green-light;
+$button-submit-hover: $green-mid;
+$right-answer-color: $green-mid;
+$wrong-answer-color: $red-light;
+$title-color: $grey-mid;
+$text-color: $grey-dark;
+$components-shadow: $white-mid;
+
+//Components - Dark Mode
+$dark-container-background: $grey-dark;
+$dark-title-color: $grey-light;
+$dark-text-color: $white-mid;
+$dark-components-shadow: $black-dark;
+
+
+// Pretos
+$_black: (
+    "dark": #000000
+);
+
+// Vermelhos
+$_red: (
+    "light": #ff5757
+);
+
+// Verdes
+$_green: (
+    "light": #32ec6a,
+    "mid": #4fb64f
+);
+
+// Brancos
+$_white: (
+    "light": #f5f5f5,
+    "mid": #d3d3d3,
+);
+
+// Cinzas
+$_grey: (
+    "light": #959595,
+    "mid": #4a4a4a,
+    "dark": #1a1a1a
+);
