@@ -4,3 +4,9 @@
     align-items: $alignItems;
     flex-direction: $flexDirection;
 }
+
+@mixin borderRadius($borderValue: 5px) {
+    -webkit-border-radius: $borderValue;
+    -moz-border-radius: $borderValue;
+    border-radius: $borderValue;
+}
