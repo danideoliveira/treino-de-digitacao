@@ -107,19 +107,6 @@
     transform: scale3d(1, 1, 1);
   }
 }
-/*
-$absoluteBlack: #000000;
-$green-mid: #4fb64f;
-$incorrectRed: #ff5757;
-$lightModeWhite: #f5f5f5;
-$titleGrey: #4a4a4a;
-$green-light: #30ec69;
-//$glowGreenShadow: #30ec68ab;
-$darkModeBlack: #1a1a1a;
-$darkModeWhite: #d3d3d3;
-$darkModeWhiteShadow: #b9b9b9;
-$darkModetitleGrey: #959595;
-*/
 .section-config-options {
   display: flex;
   justify-content: flex-start;
@@ -244,7 +231,8 @@ $darkModetitleGrey: #959595;
 .container-menu.dark {
   background-color: #1a1a1a;
 }
-.container-menu .box-menu {
+
+.box-menu {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -257,16 +245,18 @@ $darkModetitleGrey: #959595;
   content-visibility: auto;
   border-radius: 20px;
 }
-.container-menu .box-menu.dark {
+.box-menu.dark {
   box-shadow: 0px 0px 20px 0px #000000;
 }
-.container-menu .box-menu .title-menu {
+
+.title-menu {
   font-size: 3.2rem;
 }
-.container-menu .box-menu .title-menu.dark {
+.title-menu.dark {
   color: #d3d3d3;
 }
-.container-menu .box-menu .div-form {
+
+.div-form {
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -274,7 +264,8 @@ $darkModetitleGrey: #959595;
   width: 100%;
   height: 50%;
 }
-.container-menu .box-menu .div-form form {
+
+.form-game-mode {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: 1fr;
@@ -283,7 +274,8 @@ $darkModetitleGrey: #959595;
   height: 100%;
   align-items: center;
 }
-.container-menu .box-menu .div-form form button {
+
+.btn-game-mode {
   cursor: pointer;
   width: 55%;
   height: 55%;
@@ -293,38 +285,100 @@ $darkModetitleGrey: #959595;
   border-radius: 20px;
   margin: 0 auto;
 }
-.container-menu .box-menu .div-form form button.dark {
+.btn-game-mode.dark {
   background-color: #1a1a1a;
   box-shadow: 0px 4px 6px 1px #000000;
 }
-.container-menu .box-menu .div-form form button:hover {
+.btn-game-mode:hover {
   background-color: #30ec69;
   box-shadow: 0px 0px 10px 1px rgba(48, 236, 105, 0.671);
   transition: 0.2s ease-out;
 }
-.container-menu .box-menu .div-form form button img, .container-menu .box-menu .div-form form button p {
+.btn-game-mode img,
+.btn-game-mode p {
   cursor: pointer;
 }
-.container-menu .box-menu .div-form form button img {
+.btn-game-mode img {
   width: 40px;
   margin-bottom: 10px;
 }
-.container-menu .box-menu .div-form form button img.dark {
+.btn-game-mode img.dark {
   filter: invert(0.8);
 }
-.container-menu .box-menu .div-form form button img.mouse-over {
+.btn-game-mode img.mouse-over {
   filter: invert(0.1);
 }
-.container-menu .box-menu .div-form form button p {
+.btn-game-mode p {
   font-size: 1.8rem;
 }
-.container-menu .box-menu .div-form form button p.dark {
+.btn-game-mode p.dark {
   color: #d3d3d3;
 }
-.container-menu .box-menu .div-form form button p.mouse-over {
+.btn-game-mode p.mouse-over {
   color: #1a1a1a;
 }
 
+@media (min-width: 901px) and (max-width: 1280px) {
+  .box-menu {
+    height: 80%;
+    width: 80%;
+    justify-content: space-evenly;
+  }
+  .title-menu {
+    font-size: 4rem;
+  }
+  .btn-game-mode {
+    width: 90%;
+    height: 70%;
+  }
+  .btn-game-mode p {
+    font-size: 2.5rem;
+  }
+}
+@media (min-width: 320px) and (max-width: 900px) {
+  .box-menu {
+    height: 60%;
+    width: 90%;
+    justify-content: space-evenly;
+  }
+  .form-game-mode {
+    width: 100%;
+  }
+  .title-menu {
+    font-size: 3.8rem;
+    text-align: center;
+  }
+  .btn-game-mode {
+    width: 90%;
+    height: 70%;
+  }
+  .btn-game-mode p {
+    font-size: 2.5rem;
+  }
+}
+@media (min-width: 320px) and (max-width: 680px) {
+  .container-menu {
+    height: 80vh;
+  }
+  .div-form {
+    height: 100%;
+  }
+  .form-game-mode {
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: auto;
+  }
+  .box-menu {
+    height: 80%;
+  }
+}
+@media (min-width: 320px) and (max-width: 680px) and (orientation: landscape) {
+  .container-menu {
+    height: 450px;
+  }
+  .form-game-mode {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
 .container-timer-settings {
   display: flex;
   justify-content: center;
@@ -337,7 +391,8 @@ $darkModetitleGrey: #959595;
 .container-timer-settings.dark {
   background-color: #1a1a1a;
 }
-.container-timer-settings .box-timer-settings {
+
+.box-timer-settings {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -350,16 +405,18 @@ $darkModetitleGrey: #959595;
   overflow: hidden;
   border-radius: 20px;
 }
-.container-timer-settings .box-timer-settings.dark {
+.box-timer-settings.dark {
   box-shadow: 0px 0px 20px 0px #000000;
 }
-.container-timer-settings .box-timer-settings .title-timer-settings {
+
+.title-timer-settings {
   font-size: 3.2rem;
 }
-.container-timer-settings .box-timer-settings .title-timer-settings.dark {
+.title-timer-settings.dark {
   color: #d3d3d3;
 }
-.container-timer-settings .box-timer-settings .div-form-timer-settings {
+
+.div-form-timer-settings {
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -367,7 +424,8 @@ $darkModetitleGrey: #959595;
   width: 100%;
   height: 50%;
 }
-.container-timer-settings .box-timer-settings .div-form-timer-settings form {
+
+form {
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -375,7 +433,8 @@ $darkModetitleGrey: #959595;
   width: 50%;
   height: 100%;
 }
-.container-timer-settings .box-timer-settings .div-form-timer-settings form .div-selected-time {
+
+.div-selected-time {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -384,15 +443,25 @@ $darkModetitleGrey: #959595;
   width: 100%;
   gap: 20px;
 }
-.container-timer-settings .box-timer-settings .div-form-timer-settings form .div-selected-time .set-timer {
+.div-selected-time p {
+  font-size: 2.5rem;
+  color: #1a1a1a;
+}
+.div-selected-time p.dark {
+  color: #d3d3d3;
+}
+
+.set-timer {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: row;
   width: 100%;
-  gap: 20px;
 }
-.container-timer-settings .box-timer-settings .div-form-timer-settings form .div-selected-time .set-timer .decrease-timer, .container-timer-settings .box-timer-settings .div-form-timer-settings form .div-selected-time .set-timer .increase-timer {
+
+.decrease-timer,
+.increase-timer {
+  margin: 0 20px 0 20px;
   width: 100%;
   height: 50px;
   font-size: 2.5rem;
@@ -400,53 +469,129 @@ $darkModetitleGrey: #959595;
   text-align: center;
   background-color: #30ec69;
   color: #1a1a1a;
+  border-radius: 5px;
 }
-.container-timer-settings .box-timer-settings .div-form-timer-settings form .div-selected-time .set-timer .decrease-timer:hover, .container-timer-settings .box-timer-settings .div-form-timer-settings form .div-selected-time .set-timer .increase-timer:hover {
-  background-color: #d3d3d3;
+.decrease-timer:hover,
+.increase-timer:hover {
+  background-color: #a5f7be;
 }
-.container-timer-settings .box-timer-settings .div-form-timer-settings form .div-selected-time .set-timer .timer-value {
+
+.timer-value {
   width: 100%;
   height: 50px;
   font-size: 2.5rem;
-  box-shadow: 0px 4px 4px rgba(211, 211, 211, 0.25);
+  box-shadow: 0px 4px 4px lightgray;
   cursor: auto;
   text-align: center;
+  border-radius: 5px;
 }
-.container-timer-settings .box-timer-settings .div-form-timer-settings form .div-selected-time .set-timer .timer-value::-webkit-inner-spin-button, .container-timer-settings .box-timer-settings .div-form-timer-settings form .div-selected-time .set-timer .timer-value::-webkit-outer-spin-button {
+.timer-value::-webkit-inner-spin-button, .timer-value::-webkit-outer-spin-button {
   -webkit-appearance: none;
   -moz-appearance: textfield;
 }
-.container-timer-settings .box-timer-settings .div-form-timer-settings form .div-selected-time .set-timer .timer-value:focus {
+.timer-value:focus {
   outline: none;
 }
-.container-timer-settings .box-timer-settings .div-form-timer-settings form .div-selected-time .set-timer .timer-value.dark {
+.timer-value.dark {
   color: #d3d3d3;
   background-color: #1a1a1a;
   box-shadow: 0px 4px 4px #000000;
 }
-.container-timer-settings .box-timer-settings .div-form-timer-settings form .div-selected-time p {
-  font-size: 2.5rem;
-  color: #1a1a1a;
-}
-.container-timer-settings .box-timer-settings .div-form-timer-settings form .div-selected-time p.dark {
-  color: #d3d3d3;
-}
-.container-timer-settings .box-timer-settings .div-form-timer-settings form button {
+
+.btn-start {
   cursor: pointer;
   width: 100%;
   height: 40%;
   font-size: 1.8rem;
   background-color: #30ec69;
   transition: 0.3s ease-out;
+  border-radius: 5px;
 }
-.container-timer-settings .box-timer-settings .div-form-timer-settings form button.dark {
+.btn-start.dark {
   background-color: #d3d3d3;
 }
-.container-timer-settings .box-timer-settings .div-form-timer-settings form button:hover {
-  background-color: #d3d3d3;
+.btn-start:hover {
+  background-color: #a5f7be;
   transition: 0.3s ease-out;
 }
 
+@media (min-width: 901px) and (max-width: 1280px) {
+  .box-timer-settings {
+    width: 70%;
+    height: 70%;
+  }
+  .btn-start {
+    width: 80%;
+    font-size: 2.5rem;
+  }
+  .title-timer-settings {
+    font-size: 3.8rem;
+    text-align: center;
+  }
+  .timer-value {
+    height: 60px;
+    font-size: 4rem;
+    padding-top: 5px;
+  }
+}
+@media (min-width: 320px) and (max-width: 900px) {
+  .box-timer-settings {
+    width: 90%;
+    height: 60%;
+  }
+  .div-selected-time {
+    width: 80%;
+  }
+  form {
+    width: 90%;
+  }
+  .btn-start {
+    width: 50%;
+    font-size: 2.5rem;
+  }
+  .title-timer-settings {
+    font-size: 3.8rem;
+    text-align: center;
+  }
+  .timer-value {
+    height: 60px;
+    font-size: 4rem;
+    padding-top: 5px;
+  }
+}
+@media (min-width: 320px) and (max-width: 680px) {
+  .section-config-options {
+    height: 15vh;
+  }
+  .container-timer-settings {
+    height: 80vh;
+  }
+  .box-timer-settings {
+    height: 70%;
+  }
+  .div-selected-time {
+    width: 100%;
+  }
+  .div-form-timer-settings {
+    height: 80%;
+  }
+  .div-selected-time {
+    flex-direction: column;
+  }
+  .btn-start {
+    height: 60px;
+    width: 80%;
+    font-size: 2.5rem;
+  }
+}
+@media (min-width: 320px) and (max-width: 680px) and (orientation: landscape) {
+  .container-timer-settings {
+    height: 450px;
+  }
+  .div-form-timer-settings {
+    height: 80%;
+  }
+}
 .container {
   display: flex;
   justify-content: flex-end;
@@ -459,7 +604,8 @@ $darkModetitleGrey: #959595;
 .container.dark {
   background-color: #1a1a1a;
 }
-.container .box {
+
+.box {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
@@ -472,49 +618,49 @@ $darkModetitleGrey: #959595;
   border-radius: 20px;
   position: relative;
 }
-.container .box.dark {
+.box.dark {
   box-shadow: 0px 0px 20px 0px #000000;
 }
-.container .box p {
+.box p {
   font-size: 3rem;
 }
-.container .box .typed-word,
-.container .box .btn-submit {
-  font-size: 2.5rem;
-}
-.container .box .div-timer {
+
+.div-timer {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: row;
   position: absolute;
   height: 100%;
   width: 100%;
-  display: flex;
-  align-items: flex-start;
-  justify-content: flex-start;
   padding: 30px;
   z-index: 0;
 }
-.container .box .div-timer .div-timer-secondary {
+
+.div-timer-secondary {
   display: flex;
   justify-content: center;
   align-items: flex-end;
   flex-direction: row;
   gap: 5px;
 }
-.container .box .div-timer .div-timer-secondary img {
+.div-timer-secondary img {
   filter: invert(0);
 }
-.container .box .div-timer .div-timer-secondary img.dark {
+.div-timer-secondary img.dark {
   filter: invert(0.9);
 }
-.container .box .div-timer .div-timer-secondary p {
+.div-timer-secondary p {
   color: #1a1a1a;
 }
-.container .box .div-timer .div-timer-secondary p.dark {
+.div-timer-secondary p.dark {
   color: #d3d3d3;
 }
-.container .box .div-timer .div-timer-secondary p.time-over {
+.div-timer-secondary p.time-over {
   color: #ff5757;
 }
-.container .box .div-random-word {
+
+.div-random-word {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -524,28 +670,36 @@ $darkModetitleGrey: #959595;
   z-index: 1;
   text-align: center;
 }
-.container .box .div-random-word .random-word {
+
+.typed-word,
+.btn-submit {
+  font-size: 2.5rem;
+}
+
+.random-word {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: row;
   width: 100%;
+  line-break: anywhere;
 }
-.container .box .div-random-word .random-word p {
+.random-word p {
   font-size: 4rem;
   color: #1a1a1a;
   transition: 0.5s all ease;
 }
-.container .box .div-random-word .random-word p.dark {
+.random-word p.dark {
   color: #d3d3d3;
 }
-.container .box .div-random-word .random-word p.correct {
+.random-word p.correct {
   color: #4fb64f;
 }
-.container .box .div-random-word .random-word p.incorrect {
+.random-word p.incorrect {
   color: #ff5757;
 }
-.container .box .div-input-btn {
+
+.div-input-btn {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -553,7 +707,8 @@ $darkModetitleGrey: #959595;
   width: 50%;
   z-index: 1;
 }
-.container .box .div-input-btn .typed-word {
+
+.typed-word {
   text-align: center;
   box-shadow: 1px 6px 9px 1px #d3d3d3;
   width: 100%;
@@ -564,30 +719,31 @@ $darkModetitleGrey: #959595;
   border-radius: 5px;
   margin-bottom: 3rem;
 }
-.container .box .div-input-btn .typed-word:focus {
+.typed-word:focus {
   outline: none;
 }
-.container .box .div-input-btn .typed-word.dark {
+.typed-word.dark {
   color: #d3d3d3;
   background-color: #1a1a1a;
   box-shadow: 0px 0px 20px 0px #000000;
 }
-.container .box .div-input-btn .btn-submit {
+
+.btn-submit {
   background-color: #30ec69;
   transition: 0.3s all ease;
   font-weight: 500;
   font-size: 1.8rem;
   width: 100%;
   height: 5rem;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.336);
   border-radius: 5px;
 }
-.container .box .div-input-btn .btn-submit:hover {
+.btn-submit:hover {
   cursor: pointer;
-  background-color: #4fb64f;
+  background-color: #14d54e;
   transition: 0.3s all ease;
 }
-.container .div-counter-container {
+
+.div-counter-container {
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -595,7 +751,21 @@ $darkModetitleGrey: #959595;
   width: 30%;
   height: 60%;
 }
-.container .div-counter-container .div-title {
+.div-counter-container h2 {
+  font-size: 2.5rem;
+}
+.div-counter-container h2.dark {
+  color: #d3d3d3;
+}
+.div-counter-container p {
+  color: #1a1a1a;
+  font-size: 3rem;
+}
+.div-counter-container p.dark {
+  color: #d3d3d3;
+}
+
+.div-title {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -603,47 +773,58 @@ $darkModetitleGrey: #959595;
   width: 80%;
   margin-bottom: 3rem;
 }
-.container .div-counter-container .div-title .title {
+
+.title {
   font-size: 4rem;
   font-weight: 700;
   color: #4a4a4a;
   text-align: center;
 }
-.container .div-counter-container .div-title .title.dark {
+.title.dark {
   color: #959595;
 }
-.container .div-counter-container p {
-  color: #1a1a1a;
-}
-.container .div-counter-container h2 {
-  font-size: 2.5rem;
-}
-.container .div-counter-container h2.dark {
-  color: #d3d3d3;
-}
-.container .div-counter-container p {
-  font-size: 3rem;
-}
-.container .div-counter-container p.dark {
-  color: #d3d3d3;
-}
-.container .div-counter-container .div-counter {
+
+.div-counter {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   width: 80%;
 }
-.container .div-counter-container .div-counter .counter-title {
+.div-counter .counter-title {
   margin-bottom: 3rem;
 }
 
-@media (min-width: 901px) and (max-width: 1279px) {
+@media (min-width: 901px) and (max-width: 1280px) {
   html {
     font-size: 55%;
   }
-  .container .box {
+  .box {
     height: 70%;
+  }
+  .random-word p {
+    font-size: 5rem;
+  }
+  .div-selected-time p {
+    font-size: 3rem;
+  }
+  .div-timer-secondary p {
+    font-size: 4rem;
+  }
+  .typed-word {
+    font-size: 3rem;
+    height: 50px;
+  }
+  .title {
+    font-size: 5rem;
+  }
+  .div-counter .counter-title,
+.div-counter .counter {
+    font-size: 3.5rem;
+  }
+  .btn-submit {
+    font-size: 2.5rem;
+    height: 6rem;
   }
 }
 @media (min-width: 320px) and (max-width: 900px) {
@@ -653,16 +834,36 @@ $darkModetitleGrey: #959595;
     align-items: center;
     flex-direction: column-reverse;
   }
-  .container .box {
-    height: 50%;
+  .box {
+    height: 60%;
     width: 80%;
   }
-  .container .box .div-input-btn {
+  .div-input-btn {
     width: 80%;
   }
-  .container .div-counter-container {
+  .title {
+    font-size: 5rem;
+  }
+  .div-counter {
+    width: 100%;
+  }
+  .div-counter .counter-title {
+    font-size: 3rem;
+  }
+  .random-word p {
+    font-size: 4.5rem;
+  }
+  .div-counter-container {
     height: auto;
     margin-bottom: 5rem;
+  }
+  .typed-word {
+    font-size: 3rem;
+    height: 7rem;
+  }
+  .btn-submit {
+    font-size: 2rem;
+    height: 6rem;
   }
 }
 @media (min-width: 320px) and (max-width: 680px) {
@@ -678,18 +879,22 @@ $darkModetitleGrey: #959595;
   .container {
     height: 640px;
   }
-  .container .box {
+  .box {
     height: 400px;
   }
-  .container .div-counter-container {
+  .div-counter-container {
     width: 80%;
   }
-  .container .div-counter-container .div-counter .counter-title,
-.container .div-counter-container .div-counter .counter {
-    font-size: 3.5rem;
+  .random-word {
+    font-size: 4rem;
   }
-  .container .div-counter-container .div-title > .title {
-    font-size: 4.5rem;
+  .typed-word {
+    font-size: 2.5rem;
+  }
+  .div-timer-secondary p,
+.div-counter .counter-title,
+.div-counter .counter {
+    font-size: 4rem;
   }
 }
 .modal {
@@ -709,7 +914,8 @@ $darkModetitleGrey: #959595;
   opacity: 1;
   pointer-events: auto;
 }
-.modal .container-modal-open {
+
+.container-modal-open {
   width: 70%;
   position: relative;
   margin: 6% 14% auto;
@@ -717,7 +923,13 @@ $darkModetitleGrey: #959595;
   background: #f5f5f5;
   border-radius: 5px;
 }
-.modal .container-modal-open .div-tip-modal {
+.container-modal-open h2 {
+  font-size: 4rem;
+  margin-bottom: 3rem;
+  color: #4a4a4a;
+}
+
+.div-tip-modal {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -726,37 +938,35 @@ $darkModetitleGrey: #959595;
   margin-bottom: 2.5rem;
   height: 10rem;
 }
-.modal .container-modal-open .div-tip-modal .tip-example {
+.div-tip-modal p {
+  font-size: 2.5rem;
+  color: #4a4a4a;
+}
+
+.tip-example {
   width: 50%;
 }
-.modal .container-modal-open .div-tip-modal .tip-example .simbol {
+.tip-example .simbol {
   padding-top: 1rem;
   font-size: 3rem;
   color: #1a1a1a;
   font-weight: bold;
 }
-.modal .container-modal-open .div-tip-modal .tip-description {
+
+.tip-description {
   width: 50%;
   text-align: justify;
 }
-.modal .container-modal-open .div-tip-modal .tip-description img {
+.tip-description img {
   width: 3.5rem;
   filter: invert(0.2);
   vertical-align: bottom;
 }
-.modal .container-modal-open .div-tip-modal .tip-description img.dark {
+.tip-description img.dark {
   filter: invert(0.7);
 }
-.modal .container-modal-open h2 {
-  font-size: 4rem;
-  margin-bottom: 3rem;
-  color: #4a4a4a;
-}
-.modal .container-modal-open p {
-  font-size: 2.5rem;
-  color: #4a4a4a;
-}
-.modal .close-modal {
+
+.close-modal {
   position: absolute;
   width: 30px;
   right: 0;
@@ -771,24 +981,39 @@ $darkModetitleGrey: #959595;
   cursor: pointer;
 }
 
-@media (min-width: 320px) and (max-width: 900px) {
-  .modal .container-modal-open {
-    margin: 0 auto;
-    height: auto;
-    width: 90%;
-    top: 10%;
-  }
-  .modal .container-modal-open .div-tip-modal {
+@media (min-width: 901px) and (max-width: 1280px) {
+  .div-tip-modal {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: row;
     height: auto;
   }
-  .modal .container-modal-open .div-tip-modal .tip-example .simbol {
+  .div-tip-modal p {
+    font-size: 3.2rem;
+  }
+  .tip-example .simbol {
+    font-size: 3.2rem;
+  }
+}
+@media (min-width: 320px) and (max-width: 900px) {
+  .container-modal-open {
+    margin: 0 auto;
+    height: auto;
+    width: 90%;
+    top: 10%;
+  }
+  .div-tip-modal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    height: auto;
+  }
+  .div-tip-modal p {
     font-size: 2.5rem;
   }
-  .modal .container-modal-open p {
+  .tip-example .simbol {
     font-size: 2.5rem;
   }
 }

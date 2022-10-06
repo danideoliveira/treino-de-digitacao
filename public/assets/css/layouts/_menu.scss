@@ -7,94 +7,179 @@
     &.dark {
         background-color: $dark-container-background;
     }
+}
 
-    .box-menu {
-        @include setFlexBox(center, center, column);
-        width: 60%;
-        height: 80%;
-        gap: 1.5rem;
-        box-shadow: 0px 0px 20px 0px $components-shadow;
-        padding: 4rem;
-        content-visibility: auto;
-        border-radius: 20px;
+.box-menu {
+    @include setFlexBox(center, center, column);
+    width: 60%;
+    height: 80%;
+    gap: 1.5rem;
+    box-shadow: 0px 0px 20px 0px $components-shadow;
+    padding: 4rem;
+    content-visibility: auto;
+    border-radius: 20px;
+
+    &.dark {
+        box-shadow: 0px 0px 20px 0px $dark-components-shadow;
+    }
+}
+
+.title-menu {
+    font-size: 3.2rem;
+
+    &.dark {
+        color: $dark-text-color;
+    }
+}
+
+.div-form {
+    @include setFlexBox(space-around, center, column);
+    width: 100%;
+    height: 50%;
+}
+
+.form-game-mode {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1fr;
+    grid-row-gap: 0px;
+    width: 70%;
+    height: 100%;
+    align-items: center;
+}
+
+.btn-game-mode {
+    cursor: pointer;
+    width: 55%;
+    height: 55%;
+    background-color: $container-background;
+    transition: 0.2s ease-out;
+    box-shadow: 0px 4px 6px 1px $components-shadow;
+    border-radius: 20px;
+    margin: 0 auto;
+
+    &.dark {
+        background-color: $dark-container-background;
+        box-shadow: 0px 4px 6px 1px $dark-components-shadow;
+    }
+
+    &:hover {
+        background-color: $button-background;
+        box-shadow: 0px 0px 10px 1px rgba($button-background, 0.671);
+        transition: 0.2s ease-out;
+    }
+
+    img,
+    p {
+        cursor: pointer;
+    }
+
+    img {
+        width: 40px;
+        margin-bottom: 10px;
 
         &.dark {
-            box-shadow: 0px 0px 20px 0px $dark-components-shadow;
+            filter: invert(0.8);
         }
 
-        .title-menu {
-            font-size: 3.2rem;
+        &.mouse-over {
+            filter: invert(0.1);
+        }
+    }
 
-            &.dark {
-                color: $dark-text-color;
-            }
+    p {
+        font-size: 1.8rem;
+
+        &.dark {
+            color: $dark-text-color;
         }
 
-        .div-form {
-            @include setFlexBox(space-around, center, column);
-            width: 100%;
-            height: 50%;
-
-            form {
-                display: grid;
-                grid-template-columns: repeat(2, 1fr);
-                grid-template-rows: 1fr;
-                grid-row-gap: 0px;
-                width: 70%;
-                height: 100%;
-                align-items: center;
-                
-                button {
-                    cursor: pointer;
-                    width: 55%;
-                    height: 55%;
-                    background-color: $container-background;
-                    transition: 0.2s ease-out;
-                    box-shadow: 0px 4px 6px 1px $components-shadow;
-                    border-radius: 20px;
-                    margin: 0 auto;
-
-                    &.dark {
-                        background-color: $dark-container-background;
-                        box-shadow: 0px 4px 6px 1px $dark-components-shadow;
-                    }
-
-                    &:hover {
-                        background-color: $button-submit-background;
-                        box-shadow: 0px 0px 10px 1px rgba($button-submit-background, 0.671);
-                        transition: 0.2s ease-out;
-                    }
-
-                    img, p {
-                        cursor: pointer;
-                    }
-
-                    img {
-                        width: 40px;
-                        margin-bottom: 10px;
-
-                        &.dark {
-                            filter: invert(0.8);
-                        }
-
-                        &.mouse-over {
-                            filter: invert(0.1);
-                        }
-                    }
-
-                    p {
-                        font-size: 1.8rem;
-
-                        &.dark {
-                            color: $dark-text-color;
-                        }
-                        
-                        &.mouse-over {
-                            color: $text-color;
-                        }
-                    }
-                }
-            }
+        &.mouse-over {
+            color: $text-color;
         }
+    }
+}
+
+
+// Notebook
+@media (min-width: 901px) and (max-width: 1280px) {
+    .box-menu {
+        height: 80%;
+        width: 80%;
+        justify-content: space-evenly;
+    }
+
+    .title-menu {
+        font-size: 4rem;
+    }
+
+    .btn-game-mode {
+        width: 90%;
+        height: 70%;
+
+        p {
+            font-size: 2.5rem;
+        }
+    }
+}
+
+// Tablet
+@media (min-width: 320px) and (max-width: 900px) {
+    .box-menu {
+        height: 60%;
+        width: 90%;
+        justify-content: space-evenly;
+    }
+
+    .form-game-mode {
+        width: 100%;
+    }
+
+    .title-menu {
+        font-size: 3.8rem;
+        text-align: center;
+    }
+
+    .btn-game-mode {
+        width: 90%;
+        height: 70%;
+
+        p {
+            font-size: 2.5rem;
+        }
+    }
+}
+
+@media (min-width: 320px) and (max-width: 900px) and (orientation: landscape) {
+
+}
+
+// Mobile
+@media (min-width: 320px) and (max-width: 680px) {
+    .container-menu {
+        height: 80vh;
+    }
+
+    .div-form {
+        height: 100%;
+    }
+
+    .form-game-mode {
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-rows: auto;
+    }
+
+    .box-menu {
+        height: 80%;
+    }
+}
+
+@media (min-width: 320px) and (max-width: 680px) and (orientation: landscape) {
+    .container-menu {
+        height: 450px;
+    }
+
+    .form-game-mode {
+        grid-template-columns: repeat(2, 1fr);
     }
 }

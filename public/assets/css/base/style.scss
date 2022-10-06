@@ -10,35 +10,15 @@
     cursor: default;
 }
 
+// Helpers
 @import '../helpers/animations';
 @import '../helpers/variables';
 @import '../helpers/mixins';
 
+// Layouts
 @import '../layouts/config';
 @import '../layouts/menu';
 @import '../layouts/timerSettings';
 @import '../layouts/gameMode';
 @import '../layouts/modal';
 @import '../layouts/footer';
-
-@media (min-width: 901px) and (max-width: 1279px) {
-    // GLOBAL STYLE
-}
-
-// Tablet
-@media (min-width: 320px) and (max-width: 900px) {
-    // GLOBAL STYLE
-}
-
-@media (min-width: 320px) and (max-width: 900px) and (orientation: landscape) {
-    // GLOBAL STYLE
-}
-
-// Mobile
-@media (min-width: 320px) and (max-width: 680px) {
-    // GLOBAL STYLE
-}
-
-@media (min-width: 320px) and (max-width: 680px) and (orientation: landscape) {
-    // GLOBAL STYLE
-}
