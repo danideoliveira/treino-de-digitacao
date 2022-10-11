@@ -1,4 +1,4 @@
 // Criar menu
-exports.setMenu = (req, res) => {
+export function setMenu(req, res) {
     res.render('menu');
 }

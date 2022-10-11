@@ -1,15 +1,17 @@
-const express = require('express');
-const path = require('path');
+import express from 'express';
+import path from 'path';
 const app = express();
-const routes = require('./routes');
+import routes from './routes.js';
+import { fileURLToPath } from 'url';
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 app.use(express.urlencoded({extended: true}));
 
 // Utilizando arquivos estáticos através de caminho absoluto
-app.use(express.static(path.resolve(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'public')));
 
 // Definindo views e engine EJS
-app.set('views', path.resolve(__dirname, 'src', 'views'));
+app.set('views', path.join(__dirname, 'src', 'views'));
 app.set('view engine', 'ejs');
 
 // Iniciando rotas definidas

@@ -1,16 +1,16 @@
-const express = require('express');
-const route = express.Router();
-const timerController = require('./src/controllers/timerController');
-const menuController = require('./src/controllers/menuController');
+import { Router } from 'express';
+const route = Router();
+import { setTimerSettings, setTimerMode, setTrainingMode } from './src/controllers/timerController.js';
+import { setMenu } from './src/controllers/menuController.js';
 
 // Rota - Menu
-route.get('/', menuController.setMenu);
+route.get('/', setMenu);
 
 // Rota - Configurações de Timer
-route.get('/timer-settings', timerController.setTimerSettings);
+route.get('/timer-settings', setTimerSettings);
 
 // Rotas - Modos de Jogo
-route.post('/timer-mode', timerController.setTimerMode);
-route.get('/training-mode', timerController.setTrainingMode);
+route.post('/timer-mode', setTimerMode);
+route.get('/training-mode', setTrainingMode);
 
-module.exports = route;
+export default route;
