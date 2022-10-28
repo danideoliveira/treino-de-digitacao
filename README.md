@@ -14,9 +14,11 @@ Projeto simples com intuito principal de ajudar aqueles que não possuem familia
 ## 📸 Screenshots
 
 ### 💻 Desktop
+<img src="./src/assets/img/screenshots/print01.png"></br>
+<img src="./src/assets/img/screenshots/print02.png"></br>
 
 ### 📱 Mobile
-
+<img src="./src/assets/img/screenshots/print03.png"></br>
 
 ## 🔗Deploy
 #### https://treino-de-digitacao.vercel.app/
