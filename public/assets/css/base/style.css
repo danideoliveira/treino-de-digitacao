@@ -107,6 +107,100 @@
     transform: scale3d(1, 1, 1);
   }
 }
+.keyboard-base {
+  grid-area: keyboard-base;
+  margin: 0 auto;
+  width: 780px;
+  padding: 20px;
+  border-radius: 10px;
+  display: grid;
+  grid-template-columns: repeat(30, 20px);
+  grid-template-rows: repeat(5, 50px);
+  grid-gap: 5px;
+  background-color: #f5f5f5;
+  box-shadow: 1px 1px 7px 4px #c5c2c2;
+  color: black;
+}
+.keyboard-base.dark {
+  background-color: rgb(26, 26, 26);
+  box-shadow: 0px 0px 20px 0px #000000;
+}
+
+.key {
+  background-color: #878787;
+  border: 2px solid black;
+  border-radius: 5px;
+  grid-column: span 2;
+  font-size: 20px;
+  text-align: center;
+  padding-top: 17px;
+  position: relative;
+  box-shadow: 2px 1px 2px 0px black;
+}
+.key sup {
+  top: 5px;
+  left: 25px;
+  position: absolute;
+  font-size: 15px;
+}
+
+.current-key {
+  background-color: #00ff1f;
+  box-shadow: 1px 1px 20px 0px lime;
+  border: none;
+}
+
+.current-shift {
+  background-color: #ffeb3b;
+  box-shadow: 1px 1px 20px 0px #ffeb3b;
+  border: none;
+}
+
+.delete {
+  grid-column: span 4;
+}
+
+.tab {
+  grid-column: span 3;
+}
+
+.backslash {
+  grid-column: span 3;
+}
+
+.capslock {
+  grid-column: span 4;
+}
+
+.return {
+  grid-column: span 2;
+}
+
+.leftshift {
+  grid-column: span 4;
+}
+
+.rightshift {
+  grid-column: span 3;
+}
+
+.leftctrl {
+  grid-column: span 4;
+}
+
+.rightctrl {
+  grid-column: span 3;
+}
+
+.command {
+  grid-column: span 3;
+  font-size: 14px;
+}
+
+.space {
+  grid-column: span 13;
+}
+
 .section-config-options {
   display: flex;
   justify-content: flex-start;
@@ -593,10 +687,12 @@ form {
   }
 }
 .container {
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  flex-direction: row;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 0px 0px;
+  padding: 2rem;
+  grid-template-areas: " . box div-counter-container div-counter-container" ". keyboard-base div-counter-container div-counter-container";
   width: 100%;
   height: 95vh;
   background-color: #f5f5f5;
@@ -610,7 +706,9 @@ form {
   justify-content: space-evenly;
   align-items: center;
   flex-direction: column;
-  width: 60%;
+  grid-area: box;
+  width: 100%;
+  margin: 0 auto;
   height: 80%;
   gap: 1.5rem;
   box-shadow: 12px 12px 16px 0 rgba(0, 0, 0, 0.25), -8px -8px 12px 0 rgba(218, 217, 217, 0.3);
@@ -619,7 +717,7 @@ form {
   position: relative;
 }
 .box.dark {
-  box-shadow: 0px 0px 20px 0px #000000;
+  box-shadow: 12px 12px 16px 0 rgba(0, 0, 0, 0.25), -8px -8px 12px 0 rgba(0, 0, 0, 0.3);
 }
 .box p {
   font-size: 3rem;
@@ -684,6 +782,46 @@ form {
   width: 100%;
   line-break: anywhere;
 }
+.random-word div {
+  color: #1a1a1a;
+  font-size: 4rem;
+  transition: 0.05s ease;
+  position: relative;
+}
+.random-word div.dark {
+  color: white;
+}
+.random-word div sup {
+  position: absolute;
+  background-color: antiquewhite;
+  color: red;
+  border-radius: 5px;
+  left: 0;
+  top: -25px;
+  padding: 0.1rem 0.4rem;
+  visibility: hidden;
+}
+.random-word div .visible {
+  visibility: visible;
+}
+.random-word div.default {
+  color: white;
+}
+.random-word div.correct {
+  color: #4fb64f;
+}
+.random-word div.incorrect {
+  color: #ff5757;
+}
+.random-word div.default-space {
+  background-color: rgba(0, 0, 0, 0);
+}
+.random-word div.correct-space {
+  background-color: #4fb64f;
+}
+.random-word div.incorrect-space {
+  background-color: #ff5757;
+}
 .random-word p {
   font-size: 4rem;
   color: #1a1a1a;
@@ -692,11 +830,8 @@ form {
 .random-word p.dark {
   color: #d3d3d3;
 }
-.random-word p.correct {
-  color: #4fb64f;
-}
-.random-word p.incorrect {
-  color: #ff5757;
+.random-word .digitando {
+  color: rgb(188, 122, 255);
 }
 
 .div-input-btn {
@@ -718,6 +853,7 @@ form {
   color: #1a1a1a;
   border-radius: 5px;
   margin-bottom: 3rem;
+  visibility: hidden;
 }
 .typed-word:focus {
   outline: none;
@@ -745,11 +881,12 @@ form {
 
 .div-counter-container {
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: center;
   flex-direction: column;
-  width: 30%;
   height: 60%;
+  grid-area: div-counter-container;
+  width: 100%;
 }
 .div-counter-container h2 {
   font-size: 2.5rem;

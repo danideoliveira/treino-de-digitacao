@@ -16,9 +16,39 @@
 @import '../helpers/mixins';
 
 // Layouts
+@import '../layouts/keyboard';
 @import '../layouts/config';
 @import '../layouts/menu';
 @import '../layouts/timerSettings';
 @import '../layouts/gameMode';
 @import '../layouts/modal';
 @import '../layouts/footer';
+
+
+// .container {
+//     display: grid;
+//     grid-template-columns: 1fr 1fr 1fr 1fr;
+//     grid-template-rows: 1fr 1fr;
+//     gap: 0px 0px;
+//     padding: 2rem;
+//     grid-template-areas:
+//         " . box div-counter-container div-counter-container"
+//         ". keyboard-base div-counter-container div-counter-container";
+// }
+
+// .box {
+//     grid-area: box;
+//     width: 100%;
+//     margin: 0 auto;
+// }
+
+// .keyboard-base {
+//     grid-area: keyboard-base;
+//     margin: 0 auto;
+//     width: 780px;
+// }
+
+// .div-counter-container {
+//     grid-area: div-counter-container;
+//     width: 100%;
+// }

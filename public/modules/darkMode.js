@@ -4,9 +4,12 @@ const darkModePrototypes = {
     setDarkMode(arr) {
         for (let currentElement of arr) {
             const { element } = currentElement;
-            const el = document.querySelector(element);
+            const el = document.querySelectorAll(element);
             if (!el) continue;
-            el.classList.toggle('dark');
+
+            el.forEach(currentEl => {
+                currentEl.classList.toggle('dark');
+            })
         }
     },
 
@@ -26,6 +29,7 @@ export function DarkMode(arr) {
     btnDarkMode.addEventListener('click', () => {
         this.setDarkMode(arr);
         this.toggleLocalStorage();
+        btnDarkMode.blur()
     });
 }
 

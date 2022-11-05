@@ -36,4 +36,6 @@ export const darkModeElements = [
     {element: 'footer > p'},
     {element: '.div-tips > a > img'},
     {element: '.section-config-options'},
+    {element: '.keyboard-base'},
+    {element: '.random-word > div'},
 ];
