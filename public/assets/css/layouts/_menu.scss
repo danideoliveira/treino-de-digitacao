@@ -14,13 +14,13 @@
     width: 60%;
     height: 80%;
     gap: 1.5rem;
-    box-shadow: 0px 0px 20px 0px $components-shadow;
+    box-shadow: 0px 5px 0px 5px #d7d7d7;
     padding: 4rem;
     content-visibility: auto;
     border-radius: 20px;
 
     &.dark {
-        box-shadow: 0px 0px 20px 0px $dark-components-shadow;
+        box-shadow: 0px 5px 0px 5px #0e0e0e;
     }
 }
 
@@ -54,13 +54,13 @@
     height: 55%;
     background-color: $container-background;
     transition: 0.2s ease-out;
-    box-shadow: 0px 4px 6px 1px $components-shadow;
+    box-shadow: 0px 3px 0px 3px #d7d7d7;;
     border-radius: 20px;
     margin: 0 auto;
 
     &.dark {
         background-color: $dark-container-background;
-        box-shadow: 0px 4px 6px 1px $dark-components-shadow;
+        box-shadow: 0px 3px 0px 3px #0e0e0e;
     }
 
     &:hover {

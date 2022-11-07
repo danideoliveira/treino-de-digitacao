@@ -4,94 +4,115 @@
     height: 100%;
     padding: 25px 15px;
     //gap: 15px;
+}
 
-    .div-back-button {
-        align-items: center;
+.div-back-button {
+    align-items: center;
+    cursor: pointer;
+    height: 50px;
+    //filter: invert(0.1);
+    margin-bottom: 15px;
+
+    a {
+        @include setFlexBox(center, center, row);
+        width: 50px;
+        height: 50px;
+        text-decoration: none;
         cursor: pointer;
-        height: 50px;
-        filter: invert(0.1);
-        margin-bottom: 15px;
+        border-radius: 50px;
+        box-shadow: 0 2px 0 2px #d7d7d7;
 
-        a {
-            @include setFlexBox(center, center, row);
-            width: 50px;
-            height: 50px;
-            text-decoration: none;
-            cursor: pointer;
-            border-radius: 50px;
-
-            img {
-                width: 30px;
-                cursor: pointer;
-
-                &.dark {
-                    filter: invert(0.7);
-                }
-            }
-
-        }
-    }
-
-    .div-dark-mode {
-        background-color: $container-background;
-        align-items: center;
-        height: 50px;
-        margin-bottom: 15px;
-
+        
         &.dark {
-            background-color: $dark-container-background;
+            box-shadow: 0 2px 0 2px #0e0e0e;
         }
 
-        .btn-dark-mode {
-            @include setFlexBox(center, center, row);
-            width: 50px;
-            height: 50px;
-            font-size: 1.8rem;
-            background-color: $container-background;
-            border-radius: 50px;
+        &:active {
+            //background-color: #d7d7d7;
+            box-shadow: inset 0 2px 0 2px darken(#d7d7d7, 30);
+        }
+
+        img {
+            width: 30px;
             cursor: pointer;
 
             &.dark {
-                background-color: $dark-container-background;
-            }
-
-            img {
-                width: 30px;
-                cursor: pointer;
-
-                &.dark {
-                    filter: invert(0.7);
-                }
+                filter: invert(0.7);
             }
         }
+
+    }
+}
+
+.div-dark-mode {
+    background-color: $container-background;
+    align-items: center;
+    height: 50px;
+    margin-bottom: 15px;
+
+    &.dark {
+        background-color: $dark-container-background;
     }
 
-    .div-tips {
-        align-items: center;
+}
+
+.btn-dark-mode {
+    @include setFlexBox(center, center, row);
+    width: 50px;
+    height: 50px;
+    font-size: 1.8rem;
+    background-color: $container-background;
+    border-radius: 50px;
+    cursor: pointer;
+    box-shadow: 0 2px 0 2px #d7d7d7;
+
+    &.dark {
+        background-color: $dark-container-background;
+        box-shadow: 0 2px 0 2px #0e0e0e;
+    }
+
+    &:active {
+        box-shadow: inset 0 2px 0 2px darken(#d7d7d7, 30);
+    }
+
+
+    img {
+        width: 30px;
+        cursor: pointer;
+
+        &.dark {
+            filter: invert(0.7);
+        }
+    }
+}
+
+
+.div-tips {
+    align-items: center;
+    height: 50px;
+    margin-bottom: 15px;
+
+    a {
+        @include setFlexBox(center, center, row);
+        width: 50px;
         height: 50px;
-        margin-bottom: 15px;
+        font-size: 2.5rem;
+        text-decoration: none;
+        color: $dark-text-color;
+        cursor: pointer;
+        border-radius: 50px;
 
-        a {
-            @include setFlexBox(center, center, row);
-            width: 50px;
-            height: 50px;
-            font-size: 2.5rem;
-            text-decoration: none;
-            color: $dark-text-color;
+        img {
+            width: 30px;
             cursor: pointer;
-            border-radius: 50px;
 
-            img {
-                width: 30px;
-                cursor: pointer;
-
-                &.dark {
-                    filter: invert(0.7);
-                }
+            &.dark {
+                filter: invert(0.7);
             }
         }
     }
 }
+
 
 
 @media (min-width: 901px) and (max-width: 1279px) {
@@ -121,7 +142,7 @@
             background-color: $dark-container-background;
         }
 
-        .div-back-button, 
+        .div-back-button,
         .div-dark-mode,
         .div-tips {
             margin-bottom: 0;
