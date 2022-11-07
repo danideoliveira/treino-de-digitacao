@@ -23,10 +23,21 @@ const darkModePrototypes = {
 
 export function DarkMode(arr) {
     const currentTheme = localStorage.getItem('theme');
-    if (currentTheme === 'dark') this.setDarkMode(arr);
-
     const btnDarkMode = document.querySelector('.btn-dark-mode');
-    btnDarkMode.addEventListener('click', () => {
+    const darkModeIcon = document.querySelector('.btn-dark-mode > img');
+    const MOON_ICON_PATH = 'assets/img/moon_icon.png';
+    const SUN_ICON_PATH = 'assets/img/icon_sun.png';
+
+    if (currentTheme === 'dark') {
+        darkModeIcon.setAttribute('src', SUN_ICON_PATH)
+        this.setDarkMode(arr);
+    }
+
+    btnDarkMode.addEventListener('click', () => {   
+        (darkModeIcon.getAttribute('src') === MOON_ICON_PATH)
+        ? darkModeIcon.setAttribute('src', SUN_ICON_PATH)
+        : darkModeIcon.setAttribute('src', MOON_ICON_PATH)
+
         this.setDarkMode(arr);
         this.toggleLocalStorage();
         btnDarkMode.blur()
