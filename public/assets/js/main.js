@@ -167,6 +167,7 @@ const customPrototypes = {
     },
 
     isIncorrect(randomWords) {
+        if(jafoi > 1) return;
         jafoi = 1;
 
         // const btnSubmit = document.querySelector('.btn-submit');
