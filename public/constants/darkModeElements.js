@@ -38,4 +38,8 @@ export const darkModeElements = [
     {element: '.section-config-options'},
     {element: '.keyboard-base'},
     {element: '.random-word > div'},
+    {element: '.increase-timer'},
+    {element: '.decrease-timer'},
+    {element: '.btn-start'},
+    {element: '.div-back-button > a'},
 ];
