@@ -1,25 +1,71 @@
 // Cores
-$black-dark: #000000;
-$green-light: #30ec69;
-$green-mid: #4fb64f;
-$red-light: #ff5757;
-$white-light: #f5f5f5;
-$white-mid: #d3d3d3;
-$grey-light: #959595;
-$grey-mid: #4a4a4a;
-$grey-dark: #1a1a1a;
+
+$beige: (
+    'light': #faebd7
+);
+
+$red: (
+    'light': #ff5757,
+    'dark': #ff0000
+);
+
+$yellow: (
+    'glow': #ffeb3b
+);
+
+$grey: (
+    'light': #959595,
+    'light2': #878787,
+    'mid': #4a4a4a,
+    'dark': #1a1a1a
+);
+
+$green: (
+    'glow': #00ff00,
+    'light': #30ec69,
+    'light2': #7cf7a2,
+    'mid': #4fb64f,
+    'mid2': #2dd15f,
+    'dark': #249747
+);
+
+$black: (
+    'mid': #0e0e0e,
+    'dark': #000000
+);
+
+$white: (
+    'light': #f5f5f5,
+    'mid': #d7d7d7
+);
+
+$invisible: #00000000;
 
 // Components - Padrão
-$container-background: $white-light;
-$button-background: $green-light;
-$right-answer-color: $green-mid;
-$wrong-answer-color: $red-light;
-$title-color: $grey-mid;
-$text-color: $grey-dark;
-$components-shadow: $white-mid;
+$body-background: map-get($white, 'light');
+$container-background: map-get($white, 'light');
+$button-background: map-get($green, 'light');
+$button-box-shadow: map-get($green, 'mid2');
+$button-clicked: map-get($green, 'light2');
+$right-answer-color: map-get($green, 'mid');
+$wrong-answer-color: map-get($red, 'light');
+$title-color: map-get($grey, 'mid');
+$text-color: map-get($grey, 'dark');
+$components-shadow: map-get($white, 'mid');
+$keyboard-current-key: map-get($green, 'glow');
+$keyboard-current-shift: map-get($yellow, 'glow');
+$keyboard-background: map-get($white, 'light');
+$keyboard-key-background: map-get($grey, 'light2');
+$keyboard-key-border: map-get($black, 'dark');
+$keyboard-key-shadow: map-get($black, 'dark');
+$wrong-letter: map-get($red, 'dark');
+$wrong-letter-background: map-get($beige, 'light');
 
 //Components - Dark Mode
-$dark-container-background: $grey-dark;
-$dark-title-color: $grey-light;
-$dark-text-color: $white-mid;
-$dark-components-shadow: $black-dark;
+$dark-body-background: map-get($grey, 'dark');
+$dark-container-background: map-get($grey, 'dark');
+$dark-title-color: map-get($grey, 'light');
+$dark-text-color: map-get($white, 'mid');
+$dark-components-shadow: map-get($black, 'mid');
+$dark-button-box-shadow: map-get($green, 'dark');
+$dark-keyboard-background: map-get($grey, 'dark');
