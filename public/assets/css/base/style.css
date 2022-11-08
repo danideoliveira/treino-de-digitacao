@@ -1,14 +1,4 @@
 @import url("https://fonts.googleapis.com/css2?family=League+Spartan:wght@100;200;300;400;500;600;700&display=swap");
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-size: 62.5%;
-  border: none;
-  font-family: "League Spartan", Arial, Helvetica, sans-serif;
-  cursor: default;
-}
-
 .wobble {
   -webkit-animation-name: wobble;
   animation-name: wobble;
@@ -122,20 +112,20 @@
   color: black;
 }
 .keyboard-base.dark {
-  background-color: rgb(26, 26, 26);
+  background-color: #1a1a1a;
   box-shadow: 0 5px 0px 5px #0e0e0e;
 }
 
 .key {
   background-color: #878787;
-  border: 2px solid black;
+  border: 2px solid #000000;
   border-radius: 5px;
   grid-column: span 2;
   font-size: 20px;
   text-align: center;
   padding-top: 17px;
   position: relative;
-  box-shadow: 2px 1px 2px 0px black;
+  box-shadow: 2px 1px 2px 0px #000000;
 }
 .key sup {
   top: 5px;
@@ -145,8 +135,8 @@
 }
 
 .current-key {
-  background-color: #00ff1f;
-  box-shadow: 1px 1px 20px 0px lime;
+  background-color: #00ff00;
+  box-shadow: 1px 1px 20px 0px #00ff00;
   border: none;
 }
 
@@ -201,6 +191,11 @@
   grid-column: span 13;
 }
 
+@media (min-width: 320px) and (max-width: 900px) {
+  .keyboard-base {
+    display: none;
+  }
+}
 .section-config-options {
   display: flex;
   justify-content: flex-start;
@@ -295,7 +290,7 @@
   height: 50px;
   font-size: 2.5rem;
   text-decoration: none;
-  color: #d3d3d3;
+  color: #d7d7d7;
   cursor: pointer;
   border-radius: 50px;
 }
@@ -362,7 +357,7 @@
   font-size: 3.2rem;
 }
 .title-menu.dark {
-  color: #d3d3d3;
+  color: #d7d7d7;
 }
 
 .div-form {
@@ -421,7 +416,7 @@
   font-size: 1.8rem;
 }
 .btn-game-mode p.dark {
-  color: #d3d3d3;
+  color: #d7d7d7;
 }
 .btn-game-mode p.mouse-over {
   color: #1a1a1a;
@@ -522,7 +517,7 @@
   font-size: 3.2rem;
 }
 .title-timer-settings.dark {
-  color: #d3d3d3;
+  color: #d7d7d7;
 }
 
 .div-form-timer-settings {
@@ -557,7 +552,7 @@ form {
   color: #1a1a1a;
 }
 .div-selected-time p.dark {
-  color: #d3d3d3;
+  color: #d7d7d7;
 }
 
 .set-timer {
@@ -608,7 +603,7 @@ form {
   outline: none;
 }
 .timer-value.dark {
-  color: #d3d3d3;
+  color: #d7d7d7;
   background-color: #1a1a1a;
   box-shadow: 0px 3px 0px 3px #0e0e0e;
 }
@@ -635,6 +630,9 @@ form {
   .box-timer-settings {
     width: 70%;
     height: 70%;
+  }
+  form {
+    width: 70%;
   }
   .btn-start {
     width: 80%;
@@ -774,7 +772,7 @@ form {
   color: #1a1a1a;
 }
 .div-timer-secondary p.dark {
-  color: #d3d3d3;
+  color: #d7d7d7;
 }
 .div-timer-secondary p.time-over {
   color: #ff5757;
@@ -803,6 +801,7 @@ form {
   flex-direction: row;
   width: 100%;
   line-break: anywhere;
+  flex-flow: wrap;
 }
 .random-word div {
   color: #1a1a1a;
@@ -811,12 +810,12 @@ form {
   position: relative;
 }
 .random-word div.dark {
-  color: white;
+  color: #d7d7d7;
 }
 .random-word div sup {
   position: absolute;
-  background-color: antiquewhite;
-  color: red;
+  background-color: #faebd7;
+  color: #ff0000;
   border-radius: 5px;
   left: 0;
   top: -25px;
@@ -827,7 +826,7 @@ form {
   visibility: visible;
 }
 .random-word div.default {
-  color: white;
+  color: #d7d7d7;
 }
 .random-word div.correct {
   color: #4fb64f;
@@ -850,10 +849,7 @@ form {
   transition: 0.5s all ease;
 }
 .random-word p.dark {
-  color: #d3d3d3;
-}
-.random-word .digitando {
-  color: rgb(188, 122, 255);
+  color: #d7d7d7;
 }
 
 .div-input-btn {
@@ -867,7 +863,7 @@ form {
 
 .typed-word {
   text-align: center;
-  box-shadow: 1px 6px 9px 1px #d3d3d3;
+  box-shadow: 1px 6px 9px 1px #d7d7d7;
   width: 100%;
   height: 5rem;
   cursor: auto;
@@ -881,9 +877,9 @@ form {
   outline: none;
 }
 .typed-word.dark {
-  color: #d3d3d3;
+  color: #d7d7d7;
   background-color: #1a1a1a;
-  box-shadow: 0px 0px 20px 0px #000000;
+  box-shadow: 0px 0px 20px 0px #0e0e0e;
 }
 
 .btn-submit {
@@ -914,14 +910,14 @@ form {
   font-size: 2.5rem;
 }
 .div-counter-container h2.dark {
-  color: #d3d3d3;
+  color: #d7d7d7;
 }
 .div-counter-container p {
   color: #1a1a1a;
   font-size: 3rem;
 }
 .div-counter-container p.dark {
-  color: #d3d3d3;
+  color: #d7d7d7;
 }
 
 .div-title {
@@ -958,8 +954,18 @@ form {
   html {
     font-size: 55%;
   }
+  .container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    gap: 0px 0px;
+    grid-template-areas: "div-counter-container" "box" "keyboard-base";
+    width: 100%;
+    height: 720px;
+  }
   .box {
-    height: 70%;
+    height: 80%;
+    width: 70%;
   }
   .random-word p {
     font-size: 5rem;
@@ -981,6 +987,9 @@ form {
 .div-counter .counter {
     font-size: 3.5rem;
   }
+  .div-counter-container {
+    height: auto;
+  }
   .btn-submit {
     font-size: 2.5rem;
     height: 6rem;
@@ -988,10 +997,13 @@ form {
 }
 @media (min-width: 320px) and (max-width: 900px) {
   .container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column-reverse;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 0px 0px;
+    /* padding: 2rem; */
+    grid-template-areas: "div-counter-container" "box";
+    width: 100%;
   }
   .box {
     height: 60%;
@@ -1015,6 +1027,8 @@ form {
   .div-counter-container {
     height: auto;
     margin-bottom: 5rem;
+    width: 100%;
+    margin: 0 auto;
   }
   .typed-word {
     font-size: 3rem;
@@ -1029,6 +1043,14 @@ form {
   html {
     font-size: 45%;
   }
+  .container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 0px 0px;
+    grid-template-areas: "div-counter-container" "box";
+    width: 100%;
+  }
   body {
     background-color: #f5f5f5;
   }
@@ -1039,7 +1061,7 @@ form {
     height: 640px;
   }
   .box {
-    height: 400px;
+    height: 250px;
   }
   .div-counter-container {
     width: 80%;
@@ -1054,126 +1076,6 @@ form {
 .div-counter .counter-title,
 .div-counter .counter {
     font-size: 4rem;
-  }
-}
-.modal {
-  position: fixed;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  font-family: Arial, Helvetica, sans-serif;
-  background: rgba(0, 0, 0, 0.8);
-  z-index: 99999;
-  opacity: 0;
-  transition: opacity 400ms ease-in;
-  pointer-events: none;
-}
-.modal:target {
-  opacity: 1;
-  pointer-events: auto;
-}
-
-.container-modal-open {
-  width: 70%;
-  position: relative;
-  margin: 6% 14% auto;
-  padding: 25px;
-  background: #f5f5f5;
-  border-radius: 5px;
-}
-.container-modal-open h2 {
-  font-size: 4rem;
-  margin-bottom: 3rem;
-  color: #4a4a4a;
-}
-
-.div-tip-modal {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: row;
-  width: 100%;
-  margin-bottom: 2.5rem;
-  height: 10rem;
-}
-.div-tip-modal p {
-  font-size: 2.5rem;
-  color: #4a4a4a;
-}
-
-.tip-example {
-  width: 50%;
-}
-.tip-example .simbol {
-  padding-top: 1rem;
-  font-size: 3rem;
-  color: #1a1a1a;
-  font-weight: bold;
-}
-
-.tip-description {
-  width: 50%;
-  text-align: justify;
-}
-.tip-description img {
-  width: 3.5rem;
-  filter: invert(0.2);
-  vertical-align: bottom;
-}
-.tip-description img.dark {
-  filter: invert(0.7);
-}
-
-.close-modal {
-  position: absolute;
-  width: 30px;
-  right: 0;
-  top: 0;
-  text-align: center;
-  line-height: 30px;
-  border-radius: 50%;
-  font-size: 3rem;
-  font-weight: bold;
-  color: #ff5757;
-  text-decoration: none;
-  cursor: pointer;
-}
-
-@media (min-width: 901px) and (max-width: 1280px) {
-  .div-tip-modal {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: row;
-    height: auto;
-  }
-  .div-tip-modal p {
-    font-size: 3.2rem;
-  }
-  .tip-example .simbol {
-    font-size: 3.2rem;
-  }
-}
-@media (min-width: 320px) and (max-width: 900px) {
-  .container-modal-open {
-    margin: 0 auto;
-    height: auto;
-    width: 90%;
-    top: 10%;
-  }
-  .div-tip-modal {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: row;
-    height: auto;
-  }
-  .div-tip-modal p {
-    font-size: 2.5rem;
-  }
-  .tip-example .simbol {
-    font-size: 2.5rem;
   }
 }
 footer {
@@ -1200,5 +1102,22 @@ footer a {
 }
 footer p.dark,
 footer a.dark {
-  color: #d3d3d3;
+  color: #d7d7d7;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: 62.5%;
+  border: none;
+  font-family: "League Spartan", Arial, Helvetica, sans-serif;
+  cursor: default;
+}
+
+body {
+  background-color: #f5f5f5;
+}
+body.dark {
+  background-color: #1a1a1a;
 }/*# sourceMappingURL=style.css.map */

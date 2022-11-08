@@ -3,14 +3,12 @@
     position: fixed;
     height: 100%;
     padding: 25px 15px;
-    //gap: 15px;
 }
 
 .div-back-button {
     align-items: center;
     cursor: pointer;
     height: 50px;
-    //filter: invert(0.1);
     margin-bottom: 15px;
 
     a {
@@ -20,16 +18,15 @@
         text-decoration: none;
         cursor: pointer;
         border-radius: 50px;
-        box-shadow: 0 2px 0 2px #d7d7d7;
+        box-shadow: 0 2px 0 2px $components-shadow;
 
         
         &.dark {
-            box-shadow: 0 2px 0 2px #0e0e0e;
+            box-shadow: 0 2px 0 2px $dark-components-shadow;
         }
 
         &:active {
-            //background-color: #d7d7d7;
-            box-shadow: inset 0 2px 0 2px darken(#d7d7d7, 30);
+            box-shadow: inset 0 2px 0 2px darken($components-shadow, 30);
         }
 
         img {
@@ -64,15 +61,15 @@
     background-color: $container-background;
     border-radius: 50px;
     cursor: pointer;
-    box-shadow: 0 2px 0 2px #d7d7d7;
+    box-shadow: 0 2px 0 2px $components-shadow;
 
     &.dark {
         background-color: $dark-container-background;
-        box-shadow: 0 2px 0 2px #0e0e0e;
+        box-shadow: 0 2px 0 2px $dark-components-shadow;
     }
 
     &:active {
-        box-shadow: inset 0 2px 0 2px darken(#d7d7d7, 30);
+        box-shadow: inset 0 2px 0 2px darken($components-shadow, 30);
     }
 
 
@@ -113,21 +110,6 @@
     }
 }
 
-
-
-@media (min-width: 901px) and (max-width: 1279px) {
-    // GLOBAL STYLE
-}
-
-// Tablet
-@media (min-width: 320px) and (max-width: 900px) {
-    // GLOBAL STYLE
-}
-
-@media (min-width: 320px) and (max-width: 900px) and (orientation: landscape) {
-    // GLOBAL STYLE
-}
-
 // Mobile
 @media (min-width: 320px) and (max-width: 680px) {
     .section-config-options {
@@ -148,8 +130,4 @@
             margin-bottom: 0;
         }
     }
-}
-
-@media (min-width: 320px) and (max-width: 680px) and (orientation: landscape) {
-    // GLOBAL STYLE
 }

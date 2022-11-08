@@ -1,15 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@100;200;300;400;500;600;700&display=swap');
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-size: 62.5%;
-    border: none;
-    font-family: "League Spartan", Arial, Helvetica, sans-serif;
-    cursor: default;
-}
-
 // Helpers
 @import '../helpers/animations';
 @import '../helpers/variables';
@@ -21,34 +11,22 @@
 @import '../layouts/menu';
 @import '../layouts/timerSettings';
 @import '../layouts/gameMode';
-@import '../layouts/modal';
 @import '../layouts/footer';
 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 62.5%;
+    border: none;
+    font-family: "League Spartan", Arial, Helvetica, sans-serif;
+    cursor: default;
+}
 
-// .container {
-//     display: grid;
-//     grid-template-columns: 1fr 1fr 1fr 1fr;
-//     grid-template-rows: 1fr 1fr;
-//     gap: 0px 0px;
-//     padding: 2rem;
-//     grid-template-areas:
-//         " . box div-counter-container div-counter-container"
-//         ". keyboard-base div-counter-container div-counter-container";
-// }
+body {
+    background-color: $body-background;
 
-// .box {
-//     grid-area: box;
-//     width: 100%;
-//     margin: 0 auto;
-// }
-
-// .keyboard-base {
-//     grid-area: keyboard-base;
-//     margin: 0 auto;
-//     width: 780px;
-// }
-
-// .div-counter-container {
-//     grid-area: div-counter-container;
-//     width: 100%;
-// }
+    &.dark {
+        background-color: $dark-body-background;
+    }
+}
