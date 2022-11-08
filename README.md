@@ -1,6 +1,6 @@
 # ⌨️ Treino de Digitação
 
-Projeto simples com intuito principal de ajudar aqueles que não possuem familiaridade com o teclado do computador. Apesar do foco sem em desktop, a aplicação também conta com responsividade para dispositivos móveis.
+Projeto com intuito principal de ajudar aqueles que não possuem familiaridade com o teclado do computador. Apesar do foco sem em desktop, a aplicação também conta com responsividade para dispositivos móveis.
 
 ## ⚙️Tecnologias
 - HTML
@@ -16,9 +16,6 @@ Projeto simples com intuito principal de ajudar aqueles que não possuem familia
 ### 💻 Desktop
 <img src="./public/assets/img/screenshots/print01.png"></br>
 <img src="./public/assets/img/screenshots/print02.png"></br>
-
-### 📱 Mobile
-<img src="./public/assets/img/screenshots/print03.png"></br>
 
 ## 🔗Deploy
 #### https://treino-de-digitacao.vercel.app/
