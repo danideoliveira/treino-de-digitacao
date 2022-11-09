@@ -1,6 +1,6 @@
 # ⌨️ Treino de Digitação
 
-Projeto com intuito principal de ajudar aqueles que não possuem familiaridade com o teclado do computador. Apesar do foco sem em desktop, a aplicação também conta com responsividade para dispositivos móveis.
+Projeto com intuito principal de ajudar aqueles que não possuem familiaridade com o teclado do computador. O desenvolvimento foi uma ótima oportunidade para colocar em prática os estudos de NodeJS, criando rotas específicas com express, além da engine EJS para visualização das páginas.
 
 ## ⚙️Tecnologias
 - HTML
@@ -9,7 +9,6 @@ Projeto com intuito principal de ajudar aqueles que não possuem familiaridade c
 - Sass
 - NodeJS
 - Express
-- EJS
 
 ## 📸 Screenshots
 
