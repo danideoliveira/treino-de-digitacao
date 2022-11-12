@@ -5,7 +5,7 @@ export const words = [
     "Experiência",
     "Hoje eu vou para a praia!",
     "Distância",
-    "Flamengo",
+    "Estamos em constante desenvolvimento!",
     "Símbolo",
     "Chegou minha encomenda!",
     "Amanhã é feriado?",
@@ -19,5 +19,12 @@ export const words = [
     "Na terça trabalho cedo.",
     "O ônibus atrasou!",
     "Receba",
+    "A aula começa às 14:00",
     "Caneta azul",
+    "Aquilo me custou R$18,00",
+    "Talvez eu não vá, mas mando uma lembrança!",
+    "Ciclana vai se mudar mês que vem.",
+    "Cuidado, um passo de cada vez!",
+    "A internet caiu, reinicia o modem.",
+    "O esforço valoriza o trabalho."
 ];
