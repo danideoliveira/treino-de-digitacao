@@ -35,7 +35,6 @@ export const words = [
     "Faltam 2h30 para acabar.",
     "Use Ctrl + C e Ctrl + V",
     "Ela disse: \"Já volto.\"",
-    "Temperatura: 21°C",
     "Café com açúcar, por favor.",
     "Amanhã: 12/05/2025",
     "Chave: !@#123abcDEF",
